@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    <nav class="navbar">
+    <nav id="desktop-nav" class="navbar">
         <div class="container">
             <div class="logo">
                 <a href="index.html">
@@ -24,29 +24,12 @@
 
             <div class="main-menu">
                 <ul>
-                    <li>
-                        <a href="#Home">Home</a>
-                    </li>
-                    <li>
-                        <a href="#AboutUs">About Us</a>
-                    </li>
-                    <li>
-                        <a href="#Team">Team</a>
-                    </li>
-                    <li>
-                        <a href="#Research">Research</a>
-                    </li>
-                    <li>
-                        <a href="#Publication">Publication</a>
-                    </li>
-                    <li>
-                        <a href="#Fr">Fr</a>
-                    </li>
-                    <li>
-                        <a class="btn btn-primary" href="#Contact">
-                            <i class="fas fa-envelope"></i> Contact
-                        </a>
-                    </li>
+                    <li><a href="#About-en">About</a></li>
+                    <li><a href="#Team-en">Team</a></li>
+                    <li><a href="#Research-en">Research</a></li>
+                    <li><a href="#Publication-en">Publication</a></li>
+                    <li><a href="#Contact-en">Contact</a></li>
+                    <li><a href="#Fr">Fr</a></li>
                     <li>
                         <a class="logo-right-nav">
                             <img src="Images/LM2_3.png" alt="logo">
@@ -61,8 +44,36 @@
         </div>
     </nav>
 
-    <!-- Hero -->
-     <section class="hero">
+    <nav id="hamburger-nav" class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Images/Logo_Labo-meca-multi-echelles_Ang_3li_RGB.jpg" alt="logo">
+                </a>
+            </div>
+
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div>
+                    <ul class="menu-links">
+                        <li><a href="#About-en" onclick="toggleMenu()">About</a></li>
+                        <li><a href="#Team" onclick="toggleMenu()">Team</a></li>
+                        <li><a href="#Research" onclick="toggleMenu()">Research</a></li>
+                        <li><a href="#Publication" onclick="toggleMenu()">Publication</a></li>
+                        <li><a href="#Contact" onclick="toggleMenu()">Contact</a></li>
+                        <li><a href="#Fr" onclick="toggleMenu()">Fr</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero en -->
+     <section id="home-hero-en" class="hero">
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-heading text-xxl">
@@ -79,19 +90,42 @@
         </div>
      </section>
 
-     <!-- data -->
-      <section class="stats_labo">
-        <div class="stats-container">
-            <div class="">
-                <h1 class="text-xxl">20+</h1>
-                <h2 class="text-lg">Years of operation</h2>
+     <!-- About Summary -->
+    <section class="about-summary" id="AboutUs">
+        <div class="container-lr">
+            <h2 class="about-title text-xl">About Us</h2>
+
+            <p class="about-text">
+                The Laboratory for Multiscale Mechanics (LM2) conducts interdisciplinary
+                research focused on advanced materials, structural mechanics, manufacturing
+                processes, and smart systems. By combining experimental methods, numerical
+                modeling, and data-driven approaches, LM2 develops innovative solutions for
+                complex engineering challenges across multiple scales.
+            </p>
+        </div>
+    </section>
+
+    <!-- Research Summary -->
+    <section class="research-summary" id="Research">
+        <div class="container research-grid">
+            <div class="research-content">
+                <h2 class="text-xl">Research at LM2</h2>
+
+                <p>
+                    Research at LM2 focuses on understanding, designing, and manufacturing
+                    advanced materials and structures across multiple scales. The laboratory
+                    combines experimental testing, numerical modeling, and innovative
+                    fabrication methods to address complex engineering challenges.
+                </p>
+
+                <a href="research.html" class="btn btn-primary">Explore research</a>
             </div>
 
-
+            <div class="research-image">
+                <img src="Images/Projects/Concours-genie-image-Maryam-Boukor-flipped-Maryam-Boukor-300x225.webp" alt="LM2 research">
+            </div>
         </div>
-      </section>
-
-
+    </section>
 
     <script src="js/main.js"></script>
 </body>

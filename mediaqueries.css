@@ -1,0 +1,25 @@
+@media screen and (max-width: 900px) {
+    #desktop-nav {
+        display: none;
+    }
+
+    #hamburger-nav {
+        display: flex;
+    }
+
+    .navbar .container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .research-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .research-image img {
+        height: 280px;
+    }
+}
