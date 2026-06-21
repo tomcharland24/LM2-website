@@ -1,132 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LM2</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="mediaqueries.css">
-    <link rel="shortcut icon" href="Images/LM2_3.png" type="Images/x-icon" />
-
-</head>
-<body>
-    <nav id="desktop-nav" class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="Images/Logo_Labo-meca-multi-echelles_Ang_3li_RGB.jpg" alt="logo">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LM2 | Laboratory for Multiscale Mechanics</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="mediaqueries.css">
+        <link rel="shortcut icon" href="Images/LM2_3.png" type="image/png">
+    </head>
+    <body>
+        <nav id="desktop-nav" class="navbar">
+            <div class="container nav-inner">
+                <a class="logo" href="index.html">
+                    <img src="Images/Logo_Labo-meca-multi-echelles_Ang_3li_RGB.jpg" alt="LM2 logo">
                 </a>
-            </div>
-
-            <div class="main-menu">
-                <ul>
-                    <li><a href="#About-en">About</a></li>
-                    <li><a href="#Team-en">Team</a></li>
-                    <li><a href="#Research-en">Research</a></li>
-                    <li><a href="#Publication-en">Publication</a></li>
-                    <li><a href="#Contact-en">Contact</a></li>
-                    <li><a href="#Fr">Fr</a></li>
-                    <li>
-                        <a class="logo-right-nav">
-                            <img src="Images/LM2_3.png" alt="logo">
-                        </a>
-                    </li>
-                        
-                </ul> 
-
-            </div>
-
-            
-        </div>
-    </nav>
-
-    <nav id="hamburger-nav" class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="Images/Logo_Labo-meca-multi-echelles_Ang_3li_RGB.jpg" alt="logo">
-                </a>
-            </div>
-
-            <div class="hamburger-menu">
-                <div class="hamburger-icon" onclick="toggleMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div>
-                    <ul class="menu-links">
-                        <li><a href="#About-en" onclick="toggleMenu()">About</a></li>
-                        <li><a href="#Team" onclick="toggleMenu()">Team</a></li>
-                        <li><a href="#Research" onclick="toggleMenu()">Research</a></li>
-                        <li><a href="#Publication" onclick="toggleMenu()">Publication</a></li>
-                        <li><a href="#Contact" onclick="toggleMenu()">Contact</a></li>
-                        <li><a href="#Fr" onclick="toggleMenu()">Fr</a></li>
+                <div class="main-menu">
+                    <ul>
+                        <li>
+                            <a class="nav-link active" href="index.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="team.html">Team</a>
+                            <div class="dropdown-menu">
+                                <a href="team.html">Members</a>
+                                <a href="team-map.html">Origin map</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="research.html">Research</a>
+                            <div class="dropdown-menu">
+                                <a href="research/multiscale-modeling.html">Multiscale modeling</a>
+                                <a href="research/advanced-manufacturing.html">Advanced manufacturing</a>
+                                <a href="research/smart-structures.html">Smart structures</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="publications.html">Publications</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li>
+                            <a class="lang-switch" href="fr/index.html">FR</a>
+                        </li>
+                        <li class="logo-mark-item">
+                            <span class="logo-mark">
+                                <img src="Images/LM2_3.png" alt="">
+                            </span>
+                        </li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </nav>
-
-    <!-- Hero en -->
-     <section id="home-hero-en" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-heading text-xxl">
-                    Laboratory for Multiscale Mechanics (LM2)
-                </h1>
-
-                <p class="hero-text">
-                    The Laboratory for Multiscale Mechanics (LM2) has a double mission: the development of materials behavior predictive tools and their application to micro-manufacturing processes in niche applications.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary">Learn more</a>
+        </nav>
+        <nav id="hamburger-nav" class="navbar">
+            <div class="container nav-inner">
+                <a class="logo" href="index.html">
+                    <img src="Images/Logo_Labo-meca-multi-echelles_Ang_3li_RGB.jpg" alt="LM2 logo">
+                </a>
+                <div class="hamburger-menu">
+                    <div class="hamburger-icon" onclick="toggleMenu()">
+                        <span>
+                        </span>
+                        <span>
+                        </span>
+                        <span>
+                        </span>
+                    </div>
+                    <ul class="menu-links">
+                        <li>
+                            <a href="index.html" onclick="toggleMenu()">About</a>
+                        </li>
+                        <li class="menu-label">Team</li>
+                        <li class="mobile-sub">
+                            <a href="team.html" onclick="toggleMenu()">Members</a>
+                        </li>
+                        <li class="mobile-sub">
+                            <a href="team-map.html" onclick="toggleMenu()">Origin map</a>
+                        </li>
+                        <li class="menu-label">Research</li>
+                        <li class="mobile-sub">
+                            <a href="research.html" onclick="toggleMenu()">Overview</a>
+                        </li>
+                        <li class="mobile-sub">
+                            <a href="research/multiscale-modeling.html" onclick="toggleMenu()">Multiscale modeling</a>
+                        </li>
+                        <li class="mobile-sub">
+                            <a href="research/advanced-manufacturing.html" onclick="toggleMenu()">Advanced manufacturing</a>
+                        </li>
+                        <li class="mobile-sub">
+                            <a href="research/smart-structures.html" onclick="toggleMenu()">Smart structures</a>
+                        </li>
+                        <li>
+                            <a href="publications.html" onclick="toggleMenu()">Publications</a>
+                        </li>
+                        <li>
+                            <a href="contact.html" onclick="toggleMenu()">Contact</a>
+                        </li>
+                        <li>
+                            <a href="fr/index.html" onclick="toggleMenu()">Francais</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-     </section>
-
-     <!-- About Summary -->
-    <section class="about-summary" id="AboutUs">
-        <div class="container-lr">
-            <h2 class="about-title text-xl">About Us</h2>
-
-            <p class="about-text">
-                The Laboratory for Multiscale Mechanics (LM2) conducts interdisciplinary
-                research focused on advanced materials, structural mechanics, manufacturing
-                processes, and smart systems. By combining experimental methods, numerical
-                modeling, and data-driven approaches, LM2 develops innovative solutions for
-                complex engineering challenges across multiple scales.
-            </p>
-        </div>
-    </section>
-
-    <!-- Research Summary -->
-    <section class="research-summary" id="Research">
-        <div class="container research-grid">
-            <div class="research-content">
-                <h2 class="text-xl">Research at LM2</h2>
-
-                <p>
-                    Research at LM2 focuses on understanding, designing, and manufacturing
-                    advanced materials and structures across multiple scales. The laboratory
-                    combines experimental testing, numerical modeling, and innovative
-                    fabrication methods to address complex engineering challenges.
-                </p>
-
-                <a href="research.html" class="btn btn-primary">Explore research</a>
+        </nav>
+        <header class="hero">
+            <div class="container hero-content">
+                <p class="eyebrow">Polytechnique Montreal</p>
+                <h1>Laboratory for Multiscale Mechanics (LM2)</h1>
+                <p>LM2 develops predictive tools for material behavior and applies them to micro-manufacturing, smart structures, and multiscale engineering challenges.</p>
+                <div class="button-row">
+                    <a class="btn btn-primary" href="research.html">Explore research</a>
+                    <a class="btn btn-outline" href="team.html">Meet the team</a>
+                </div>
             </div>
-
-            <div class="research-image">
-                <img src="Images/Projects/Concours-genie-image-Maryam-Boukor-flipped-Maryam-Boukor-300x225.webp" alt="LM2 research">
+        </header>
+        <main>
+            <section class="section">
+                <div class="container grid-2">
+                    <div>
+                        <p class="eyebrow">About LM2</p>
+                        <h2 class="text-xl">A lab connecting materials, models, and manufacturing.</h2>
+                        <p>Our work combines experiments, numerical modeling, and fabrication to understand how materials behave across scales and how this knowledge can support useful engineering systems.</p>
+                    </div>
+                    <img class="image-panel" src="Images/Projects/Concours-genie-image-Maryam-Boukor-flipped-Maryam-Boukor-300x225.webp" alt="LM2 research sample">
+                </div>
+            </section>
+            <section class="section alt">
+                <div class="container grid-2">
+                    <div>
+                        <p class="eyebrow">Team</p>
+                        <h2 class="text-xl">A multidisciplinary and international group.</h2>
+                        <p>The LM2 team brings together five professors with complementary expertise, postdoctoral fellows, PhD students, master's students, and collaborators. Members come from many parts of the world, which gives the lab a broad scientific culture and a strong mix of perspectives.</p>
+                        <div class="button-row">
+                            <a class="btn btn-primary" href="team.html">View members</a>
+                            <a class="btn btn-outline" href="team-map.html">View origins</a>
+                        </div>
+                    </div>
+                    <img class="image-panel" src="Images/Team fun/IMG_2046-Large-300x225.webp" alt="LM2 team activity">
+                </div>
+            </section>
+            <section class="section">
+                <div class="container grid-2">
+                    <img class="image-panel" src="Images/Projects/Lamoureux_kirigami_parachutes_cover_picture-300x153.webp" alt="LM2 publication visual">
+                    <div>
+                        <p class="eyebrow">Publications</p>
+                        <h2 class="text-xl">Research outputs in leading mechanics and materials venues.</h2>
+                        <p>LM2 publications document advances in multiscale mechanics, advanced manufacturing, architected materials, and smart structures. This section can be connected later to PolyPublie, or maintained manually with citations, DOI links, and filters.</p>
+                        <div class="metric-grid">
+                            <div class="metric">
+                                <strong>5000+</strong>
+                                <span>Total citations placeholder</span>
+                            </div>
+                            <div class="metric">
+                                <strong>3</strong>
+                                <span>Main research axes</span>
+                            </div>
+                            <div class="metric">
+                                <strong>Top</strong>
+                                <span>Mechanics and materials journals</span>
+                            </div>
+                        </div>
+                        <a class="btn btn-primary" href="publications.html">Open publications</a>
+                    </div>
+                </div>
+            </section>
+            <section class="section alt">
+                <div class="container grid-2">
+                    <div>
+                        <p class="eyebrow">Research</p>
+                        <h2 class="text-xl">Several expertises combined into research axes.</h2>
+                        <p>LM2 combines modeling, experiments, fabrication, design, and mechanics to build research themes that connect fundamental understanding with engineering applications.</p>
+                        <a class="btn btn-primary" href="research.html">View research themes</a>
+                    </div>
+                    <img class="image-panel" src="Images/Projects/5.kirigami_3-300x212.webp" alt="LM2 research theme">
+                </div>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <a class="footer-logo" href="index.html">
+                    <img src="Images/LM2_3.png" alt="LM2">
+                </a>
+                <div class="footer-socials">
+                    <a href="mailto:lm2@polymtl.ca">Email</a>
+                    <a href="#">in</a>
+                    <a href="#">YT</a>
+                </div>
+                <p class="footer-copy">&copy; 2026 LM2. All rights reserved.</p>
             </div>
-        </div>
-    </section>
-
-    <script src="js/main.js"></script>
-</body>
+        </footer>
+        <script src="js/main.js">
+        </script>
+    </body>
 </html>
