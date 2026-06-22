@@ -8,6 +8,35 @@ function toggleMenu() {
     icon.classList.toggle("open");
 }
 
+function setupMobileMenuContent() {
+    const menu = document.querySelector(".menu-links");
+
+    if (!menu) return;
+
+    const path = window.location.pathname.replace(/\\/g, "/");
+    const isFrench = path.includes("/fr/");
+    const inResearchFolder = path.includes("/research/");
+    const prefix = inResearchFolder ? "../" : "";
+    const languageHref = isFrench
+        ? (inResearchFolder ? "../../research/" : "../") + (path.split("/").pop() || "index.html")
+        : (inResearchFolder ? "../fr/research/" : "fr/") + (path.split("/").pop() || "index.html");
+
+    const aboutLabel = isFrench ? "&Agrave; propos" : "About";
+    const teamLabel = isFrench ? "&Eacute;quipe" : "Team";
+    const languageLabel = isFrench ? "English" : "Francais";
+    const logoPrefix = isFrench ? (inResearchFolder ? "../../" : "../") : prefix;
+
+    menu.innerHTML = `
+        <li><a href="${prefix}index.html" onclick="toggleMenu()">${aboutLabel}</a></li>
+        <li><a href="${prefix}team.html" onclick="toggleMenu()">${teamLabel}</a></li>
+        <li><a href="${prefix}research.html" onclick="toggleMenu()">${isFrench ? "Recherche" : "Research"}</a></li>
+        <li><a href="${prefix}publications.html" onclick="toggleMenu()">Publications</a></li>
+        <li><a href="${prefix}contact.html" onclick="toggleMenu()">Contact</a></li>
+        <li><a href="${languageHref}" onclick="toggleMenu()">${languageLabel}</a></li>
+        <li class="mobile-menu-logo"><img src="${logoPrefix}Images/LM2_3.png" alt=""></li>
+    `;
+}
+
 function setupPublicationFilters() {
     const searchInput = document.querySelector("[data-publication-search]");
     const yearSelect = document.querySelector("[data-publication-year]");
@@ -126,6 +155,7 @@ function setupTeamGeoChart() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    setupMobileMenuContent();
     setupPublicationFilters();
     setupTeamNationalityData();
     setupTeamGeoChart();

@@ -14,8 +14,8 @@
     --muted-color: #666;
     --max-width: 1500px;
     --content-width: 1500px;
-    --member-card-width: 475px;
-    --member-card-height: 675px;
+    --member-card-width: 285px;
+    --member-card-height: 540px;
 }
 
 html {
@@ -60,6 +60,10 @@ p {
 .site-footer > .container {
     width: min(var(--content-width), calc(100% - 80px));
     padding: 0;
+}
+
+.section > .container.contact-grid {
+    width: min(1500px, calc(100% - 80px));
 }
 
 .navbar .container,
@@ -132,7 +136,7 @@ p {
 .dropdown-menu {
     position: absolute;
     top: 100%;
-    left: 0;
+    right: 0;
     min-width: 230px;
     padding: 10px;
     background: #fff;
@@ -162,6 +166,15 @@ p {
 .dropdown-menu a:hover {
     background: var(--light-color);
     color: var(--primary-color);
+}
+
+.dropdown-menu:has(a[href*="additive-manufacturing"]),
+.dropdown-menu:has(a[href*="team-map"]) {
+    width: max-content;
+    max-width: min(760px, calc(100vw - 32px));
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 4px;
 }
 
 .lang-switch {
@@ -226,7 +239,7 @@ p {
 }
 
 .menu-links.open {
-    max-height: 680px;
+    max-height: 520px;
     border-color: var(--border-color);
 }
 
@@ -237,22 +250,38 @@ p {
 }
 
 .menu-label {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    text-align: left;
     padding: 12px 16px 4px;
     color: var(--primary-color);
+    font-family: inherit;
     font-size: 0.78rem;
     font-weight: 800;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .mobile-sub {
     padding-left: 14px;
 }
 
+.mobile-menu-logo {
+    display: flex;
+    justify-content: center;
+    padding: 12px 16px 16px;
+}
+
+.mobile-menu-logo img {
+    width: 58px;
+}
+
 .hero {
     min-height: 590px;
     display: flex;
-    align-items: top;
+    align-items: center;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.18)), url("../Images/PR_J-ARMAND-BOMB_MB_019.webp") center/cover no-repeat;
     color: #fff;
 }
@@ -264,7 +293,7 @@ p {
 .hero-content {
     width: 80%;
     max-width: none;
-    padding: 40px 0;
+    padding: 80px 0;
 }
 
 .eyebrow {
@@ -406,6 +435,14 @@ p {
     margin-top: 22px;
 }
 
+.section-copy .btn {
+    margin-top: 22px;
+}
+
+.grid-2 > div > .btn {
+    margin-top: 22px;
+}
+
 .metric-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -538,42 +575,97 @@ p {
     width: var(--member-card-width);
     height: var(--member-card-height);
     overflow: hidden;
+    border: 0;
+    border-radius: 14px;
+    background: #f8f8f8;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.16);
 }
 
 .member-card img {
     width: 100%;
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 1.42 / 1;
     object-fit: cover;
+    border-radius: 14px 14px 0 0;
 }
 
 .member-body {
     display: flex;
     flex: 1;
     flex-direction: column;
-    padding: 15px;
+    padding: 12px;
     overflow: hidden;
 }
 
-.member-meta {
-    color: var(--primary-color);
-    font-size: 0.88rem;
-    font-weight: 800;
-    margin-bottom: 8px;
+.member-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #d4d4d4;
 }
 
-.member-theme {
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.member-project {
+.member-head h3 {
+    margin: 0;
     color: var(--dark-color);
-    font-weight: 700;
-    margin-top: 8px;
+    font-size: 0.98rem;
+    font-weight: 600;
+    transition: color 180ms ease;
 }
 
-.member-body p:last-child {
-    margin-top: auto;
+.member-card:hover .member-head h3 {
+    color: var(--primary-color);
+}
+
+.member-socials {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 6px;
+}
+
+.member-socials a {
+    width: 26px;
+    height: 26px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #777;
+    border-radius: 50%;
+    background: #fff;
+    color: var(--dark-color);
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1;
+    transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.member-socials a:last-child {
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.member-card:hover .member-socials a {
+    transform: rotate(-45deg);
+}
+
+.member-credentials {
+    padding: 10px 0;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.member-credentials p {
+    color: var(--muted-color);
+    font-size: 0.86rem;
+    font-style: italic;
+    line-height: 1.45;
+}
+
+.member-expertise {
+    padding-top: 10px;
+    color: #111;
+    font-size: 0.9rem;
+    line-height: 1.55;
 }
 
 .team-category + .team-category {
@@ -610,7 +702,7 @@ p {
 .origin-map {
     position: relative;
     min-height: 500px;
-    /* border: 1px solid var(--border-color); */
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     background: #fff;
     overflow: hidden;
