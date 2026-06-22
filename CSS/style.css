@@ -14,8 +14,8 @@
     --muted-color: #666;
     --max-width: 1500px;
     --content-width: 1500px;
-    --member-card-width: 270px;
-    --member-card-height: 565px;
+    --member-card-width: 475px;
+    --member-card-height: 675px;
 }
 
 html {
@@ -252,7 +252,7 @@ p {
 .hero {
     min-height: 590px;
     display: flex;
-    align-items: center;
+    align-items: top;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.18)), url("../Images/PR_J-ARMAND-BOMB_MB_019.webp") center/cover no-repeat;
     color: #fff;
 }
@@ -264,7 +264,7 @@ p {
 .hero-content {
     width: 80%;
     max-width: none;
-    padding: 80px 0;
+    padding: 40px 0;
 }
 
 .eyebrow {
@@ -542,7 +542,7 @@ p {
 
 .member-card img {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 3 / 2;
     object-fit: cover;
 }
 
@@ -610,7 +610,7 @@ p {
 .origin-map {
     position: relative;
     min-height: 500px;
-    border: 1px solid var(--border-color);
+    /* border: 1px solid var(--border-color); */
     border-radius: 8px;
     background: #fff;
     overflow: hidden;
