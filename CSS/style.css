@@ -13,9 +13,9 @@
     --text-color: #333;
     --muted-color: #666;
     --max-width: 1500px;
-    --content-width: 1500px;
-    --member-card-width: 285px;
-    --member-card-height: 540px;
+    --content-width: 1700px;
+    --member-card-width: 332px;
+    --member-card-height: 600px;
 }
 
 html {
@@ -564,7 +564,7 @@ p {
 .member-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, var(--member-card-width));
-    gap: 18px;
+    gap: 10px;
     justify-content: center;
     align-items: stretch;
 }
@@ -583,9 +583,10 @@ p {
 
 .member-card img {
     width: 100%;
-    aspect-ratio: 1.42 / 1;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 14px 14px 0 0;
+    object-position: center 25%;
 }
 
 .member-body {
@@ -624,8 +625,8 @@ p {
 }
 
 .member-socials a {
-    width: 26px;
-    height: 26px;
+    width: 30px;
+    height: 30px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -639,11 +640,17 @@ p {
     transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
 }
 
-.member-socials a:last-child {
+.member-socials i {
+    font-size: 14px;
+}
+
+
+.member-socials a.member-arrow {
     border-color: var(--primary-color);
     background: var(--primary-color);
     color: #fff;
 }
+
 
 .member-card:hover .member-socials a {
     transform: rotate(-45deg);
@@ -814,9 +821,8 @@ p {
 
 .footer-logo img {
     width: 92px;
-    background: #fff;
-    border-radius: 8px;
-    padding: 8px;
+    height: auto;
+    box-sizing: border-box;
 }
 
 .footer-socials {
@@ -834,6 +840,17 @@ p {
     background: #fff;
     color: var(--dark-color);
 }
+
+.footer-socials a img {
+    display: block;
+    object-fit: contain;
+}
+
+
+.footer-socials i {
+    font-size: 25px;
+}
+
 
 .footer-copy {
     color: #d7d7d7;
