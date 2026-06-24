@@ -72,20 +72,16 @@
                 <div class="container">
                     <div class="publication-tools">
                         <input type="search" data-publication-search placeholder="Chercher par titre, auteur, revue...">
+
+                        <input list="author-list" data-author-search placeholder="Chercher par auteur...">
+                        <datalist id="author-list"></datalist>
+
                         <select data-publication-year>
                             <option value="">Toutes les annees</option>
-                            <option value="2026">2026</option>
-                            <option value="2025">2025</option>
-                            <option value="2024">2024</option>
-                        </select>
-                        <select data-publication-theme>
-                            <option value="">Tous les themes</option>
-                            <option value="modeling">Modelisation multi-echelles</option>
-                            <option value="manufacturing">Fabrication avancee</option>
-                            <option value="structures">Structures intelligentes</option>
                         </select>
                     </div>
-                    <div class="publication-list">
+                    <div class="publication-list" data-publication-list></div>
+                    <!-- <div class="publication-list">
                         <article class="publication-card" data-publication-card data-year="2026" data-theme="structures">
                             <p class="pub-meta">2026 | Structures intelligentes | Article</p>
                             <h3>Structures adaptatives inspirees du kirigami</h3>
@@ -104,7 +100,7 @@
                             <p>Auteur A, Auteur B, collaborateurs LM2. Remplacer par la citation officielle et le DOI.</p>
                             <a class="btn btn-outline" href="#">DOI / lien PolyPublie</a>
                         </article>
-                    </div>
+                    </div> -->
                 </div>
             </section>
         </main>
@@ -132,7 +128,7 @@
                 <p class="footer-copy">&copy; 2026 LM2. Tous droits reserves.</p>
             </div>
         </footer>
-        <script src="../js/main.js">
-        </script>
+        <script src="../js/main.js"></script>
+        <script src="../js/publications.js"></script>
     </body>
 </html>

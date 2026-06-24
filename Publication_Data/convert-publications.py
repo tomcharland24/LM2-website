@@ -2,8 +2,10 @@ import csv
 import json
 from collections import OrderedDict
 
-input_path = "../Publication-Data/polypublie-export.csv"
-output_path = "../Publication-Data/publications.json"
+input_path = "Publication_Data/polypublie-export.csv"
+output_path = "Publication_Data/publications.json"
+
+# run in terminal : python Publication_Data\convert-publications.py
 
 publications = OrderedDict()
 
