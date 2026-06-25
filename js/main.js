@@ -90,7 +90,8 @@ function setupTeamNationalityData() {
             name,
             role,
             country: card.dataset.nationality,
-            code: card.dataset.countryCode || card.dataset.nationality
+            code: card.dataset.countryCode || card.dataset.nationality,
+            label: card.dataset.countryLabel || card.dataset.nationality
         };
     }).filter((member) => member.country);
 
@@ -106,7 +107,13 @@ function drawTeamGeoChart() {
     const members = getStoredTeamNationalities();
     const countryCounts = members.reduce((counts, member) => {
         const key = member.code || member.country;
-        const current = counts.get(key) || { country: member.country, code: key, count: 0, names: [] };
+        const current = counts.get(key) || {
+            country: member.country,
+            code: key,
+            label: member.label || member.country,
+            count: 0,
+            names: []
+        };
 
         current.count += 1;
         current.names.push(member.name);
@@ -125,7 +132,12 @@ function drawTeamGeoChart() {
         colorAxis: { colors: ["#f7b7bb", "#ed1c24", "#9f1015"] },
         datalessRegionColor: "#eef0f4",
         backgroundColor: "#ffffff",
-        legend: "none"
+        legend: {
+            textStyle: {
+                color: "#333",
+                fontSize: 12
+            }
+        }
     };
 
     const chart = new google.visualization.GeoChart(chartContainer);
@@ -134,7 +146,7 @@ function drawTeamGeoChart() {
     if (listContainer) {
         listContainer.innerHTML = Array.from(countryCounts.values())
             .sort((a, b) => b.count - a.count || a.country.localeCompare(b.country))
-            .map((item) => `<li><strong>${item.country}</strong><br>${item.count} member${item.count > 1 ? "s" : ""}: ${item.names.join(", ")}</li>`)
+            .map((item) => `<li><strong>${item.label}</strong><br>${item.names.join(", ")}</li>`)
             .join("");
     }
 }

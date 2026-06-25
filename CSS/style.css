@@ -700,14 +700,15 @@ p {
 }
 
 .map-layout {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 28px;
-    align-items: stretch;
 }
 
 .origin-map {
     position: relative;
+    width: 100%;
     min-height: 500px;
     border: 1px solid var(--border-color);
     border-radius: 8px;
@@ -716,7 +717,9 @@ p {
 }
 
 .origin-list {
+    width: 100%;
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 12px;
 }
 
