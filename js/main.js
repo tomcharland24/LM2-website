@@ -346,9 +346,9 @@ document.addEventListener("DOMContentLoaded", () => {
     setupDesktopMenuContent();
     setupMobileMenuContent();
     setupAboutCarousel();
-    setupFormerStudentFilters();
     setupPublicationFilters();
     setupInfrastructureFilters();
     setupTeamNationalityData();
+    setupFormerStudentFilters();
     setupTeamGeoChart();
 });
