@@ -40,6 +40,10 @@
     .publication-tools {
         grid-template-columns: 1fr;
     }
+
+    .former-student-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media screen and (max-width: 640px) {
@@ -95,4 +99,21 @@
     .origin-map {
         min-height: 330px;
     }
+
+    .infrastructure-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .infrastructure-card {
+        width: 100%;
+        height: auto;
+        min-height: var(--infrastructure-card-height);
+    }
+    
+    .former-student-grid {
+        grid-template-columns: 1fr;
+    }
 }
+
+
+

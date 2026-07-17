@@ -31,6 +31,7 @@ function setupMobileMenuContent() {
         <li><a href="${prefix}team.html" onclick="toggleMenu()">${teamLabel}</a></li>
         <li><a href="${prefix}research.html" onclick="toggleMenu()">${isFrench ? "Recherche" : "Research"}</a></li>
         <li><a href="${prefix}publications.html" onclick="toggleMenu()">Publications</a></li>
+        <li><a href="${prefix}infrastructure.html" onclick="toggleMenu()">Infrastructure</a></li>
         <li><a href="${prefix}contact.html" onclick="toggleMenu()">Contact</a></li>
         <li><a href="${languageHref}" onclick="toggleMenu()">${languageLabel}</a></li>
         <li class="mobile-menu-logo"><img src="${logoPrefix}Images/LM2_3.png" alt=""></li>
@@ -165,10 +166,189 @@ function setupTeamGeoChart() {
     google.charts.setOnLoadCallback(drawTeamGeoChart);
     window.addEventListener("resize", drawTeamGeoChart);
 }
+function setupInfrastructureFilters() {
+    const buttons = Array.from(document.querySelectorAll("[data-infrastructure-filter]"));
+    const sections = Array.from(document.querySelectorAll("[data-infrastructure-section]"));
+
+    if (buttons.length === 0 || sections.length === 0) return;
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const filter = button.dataset.infrastructureFilter;
+
+            buttons.forEach((item) => item.classList.toggle("active", item === button));
+
+            sections.forEach((section) => {
+                const isVisible = filter === "all" || section.dataset.infrastructureSection === filter;
+                section.classList.toggle("hidden", !isVisible);
+            });
+        });
+    });
+}
+
+function setupDesktopMenuContent() {
+    const menu = document.querySelector("[data-desktop-menu]");
+    const logoLink = document.querySelector("[data-site-logo]");
+    const logoImg = document.querySelector("[data-site-logo-img]");
+
+    if (!menu || !logoLink || !logoImg) return;
+
+    const path = window.location.pathname.replace(/\\/g, "/");
+    const currentPage = path.split("/").pop() || "index.html";
+    const isFrench = path.includes("/fr/");
+    const inResearchFolder = path.includes("/research/");
+    const prefix = inResearchFolder ? "../" : "";
+    const assetPrefix = isFrench
+        ? (inResearchFolder ? "../../" : "../")
+        : prefix;
+
+    const labels = {
+        about: isFrench ? "&Agrave; propos" : "About",
+        team: isFrench ? "&Eacute;quipe" : "Team",
+        members: isFrench ? "Membres" : "Members",
+        originMap: isFrench ? "Carte des origines" : "Origin map",
+        research: isFrench ? "Recherche" : "Research",
+        infrastructure: "Infrastructure",
+        publications: "Publications",
+        contact: "Contact",
+        language: isFrench ? "EN" : "FR"
+    };
+
+    const languageHref = isFrench
+        ? (inResearchFolder ? "../../research/" : "../") + currentPage
+        : (inResearchFolder ? "../fr/research/" : "fr/") + currentPage;
+
+    function activeClass(section) {
+        if (section === "about") return currentPage === "index.html" ? " active" : "";
+        if (section === "team") return ["team.html", "team-map.html"].includes(currentPage) ? " active" : "";
+        if (section === "research") return currentPage === "research.html" || inResearchFolder ? " active" : "";
+        if (section === "infrastructure") return currentPage === "infrastructure.html" ? " active" : "";
+        if (section === "publications") return currentPage === "publications.html" ? " active" : "";
+        if (section === "contact") return currentPage === "contact.html" ? " active" : "";
+
+        return "";
+    }
+
+    logoLink.href = `${prefix}index.html`;
+    logoImg.src = isFrench
+        ? `${assetPrefix}Images/Logo_Labo-meca-multi-echelles_Fran_3li_RGB.jpg`
+        : `${assetPrefix}Images/Logo_Labo-meca-multi-echelles_Ang_3li_RGB.jpg`;
+    logoImg.alt = isFrench ? "Logo LM2" : "LM2 logo";
+
+    menu.innerHTML = `
+        <li>
+            <a class="nav-link${activeClass("about")}" href="${prefix}index.html">${labels.about}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link${activeClass("team")}" href="${prefix}team.html">${labels.team}</a>
+            <div class="dropdown-menu">
+                <a href="${prefix}team.html">${labels.members}</a>
+                <a href="${prefix}team-map.html">${labels.originMap}</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link${activeClass("research")}" href="${prefix}research.html">${labels.research}</a>
+            <div class="dropdown-menu">
+                <a href="${prefix}research/additive-manufacturing.html">${isFrench ? "Fabrication additive" : "Additive Manufacturing"}</a>
+                <a href="${prefix}research/multiscale-mechanics.html">${isFrench ? "M&eacute;canique multi-&eacute;chelles" : "Multiscale Mechanics"}</a>
+                <a href="${prefix}research/multistable-structures.html">${isFrench ? "Structures multistables" : "Multistable Structures"}</a>
+                <a href="${prefix}research/fluids-slender-structures.html">${isFrench ? "Fluides et structures &eacute;lanc&eacute;es" : "Fluids and Slender Structures"}</a>
+                <a href="${prefix}research/additive-manufacturing-smart-composites.html">${isFrench ? "Fabrication additive de composites intelligents" : "Additive Manufacturing of Smart Composites"}</a>
+                <a href="${prefix}research/multiscale-modeling.html">${isFrench ? "Mod&eacute;lisation multi-&eacute;chelles" : "Multiscale modeling"}</a>
+                <a href="${prefix}research/advanced-manufacturing.html">${isFrench ? "Fabrication avanc&eacute;e" : "Advanced manufacturing"}</a>
+                <a href="${prefix}research/smart-structures.html">${isFrench ? "Structures intelligentes" : "Smart structures"}</a>
+            </div>
+        </li>
+        <li>
+            <a class="nav-link${activeClass("infrastructure")}" href="${prefix}infrastructure.html">${labels.infrastructure}</a>
+        </li>
+        <li>
+            <a class="nav-link${activeClass("publications")}" href="${prefix}publications.html">${labels.publications}</a>
+        </li>
+        <li>
+            <a class="nav-link${activeClass("contact")}" href="${prefix}contact.html">${labels.contact}</a>
+        </li>
+        <li>
+            <a class="lang-switch" href="${languageHref}">${labels.language}</a>
+        </li>
+        <li class="logo-mark-item">
+            <span class="logo-mark">
+                <img src="${assetPrefix}Images/LM2_3.png" alt="">
+            </span>
+        </li>
+    `;
+}
+
+function setupAboutCarousel() {
+    const carousel = document.querySelector("[data-about-carousel]");
+
+    if (!carousel) return;
+
+    const images = Array.from(carousel.querySelectorAll(".image-panel"));
+    const prevButton = carousel.querySelector("[data-carousel-prev]");
+    const nextButton = carousel.querySelector("[data-carousel-next]");
+    let currentIndex = 0;
+    let intervalId;
+
+    function showImage(index) {
+        currentIndex = (index + images.length) % images.length;
+
+        images.forEach((image, imageIndex) => {
+            image.classList.toggle("active", imageIndex === currentIndex);
+        });
+    }
+
+    function nextImage() {
+        showImage(currentIndex + 1);
+    }
+
+    function restartInterval() {
+        window.clearInterval(intervalId);
+        intervalId = window.setInterval(nextImage, 5000);
+    }
+
+    prevButton?.addEventListener("click", () => {
+        showImage(currentIndex - 1);
+        restartInterval();
+    });
+
+    nextButton?.addEventListener("click", () => {
+        showImage(currentIndex + 1);
+        restartInterval();
+    });
+
+    restartInterval();
+}
+
+function setupFormerStudentFilters() {
+    const buttons = Array.from(document.querySelectorAll("[data-former-filter]"));
+    const cards = Array.from(document.querySelectorAll("[data-former-student]"));
+
+    if (buttons.length === 0 || cards.length === 0) return;
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const filter = button.dataset.formerFilter;
+
+            buttons.forEach((item) => {
+                item.classList.toggle("active", item === button);
+            });
+
+            cards.forEach((card) => {
+                const isVisible = filter === "all" || card.dataset.formerCategory === filter;
+                card.classList.toggle("hidden", !isVisible);
+            });
+        });
+    });
+}
 
 document.addEventListener("DOMContentLoaded", () => {
+    setupDesktopMenuContent();
     setupMobileMenuContent();
+    setupAboutCarousel();
+    setupFormerStudentFilters();
     setupPublicationFilters();
+    setupInfrastructureFilters();
     setupTeamNationalityData();
     setupTeamGeoChart();
 });

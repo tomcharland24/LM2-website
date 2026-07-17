@@ -15,89 +15,12 @@
     <body>
         <nav id="desktop-nav" class="navbar">
             <div class="container nav-inner">
-                <a class="logo" href="index.html">
-                    <img src="Images/Logo_Labo-meca-multi-echelles_Ang_3li_RGB.jpg" alt="LM2 logo">
+                <a class="logo" data-site-logo href="#">
+                    <img data-site-logo-img src="" alt="LM2 logo">
                 </a>
+
                 <div class="main-menu">
-                    <ul>
-                        <li>
-                            <a class="nav-link" href="index.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="team.html">Team</a>
-                            <div class="dropdown-menu">
-                                <a href="team.html">Members</a>
-                                <a href="team-map.html">Origins</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="research.html">Research</a>
-                            <div class="dropdown-menu">
-                                <a href="research/additive-manufacturing.html">Additive Manufacturing</a>
-                                <a href="research/multiscale-mechanics.html">Multiscale Mechanics</a>
-                                <a href="research/multistable-structures.html">Multistable Structures</a>
-                                <a href="research/fluids-slender-structures.html">Fluids and Slender Structures</a>
-                                <a href="research/additive-manufacturing-smart-composites.html">Additive Manufacturing of Smart Composites</a>
-                                <a href="research/multiscale-modeling.html">Multiscale modeling</a>
-                                <a href="research/advanced-manufacturing.html">Advanced manufacturing</a>
-                                <a href="research/smart-structures.html">Smart structures</a>
-                            </div>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="publications.html">Publications</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                        <li>
-                            <a class="lang-switch" href="fr/team.html">FR</a>
-                        </li>
-                        <li class="logo-mark-item">
-                            <span class="logo-mark">
-                                <img src="Images/LM2_3.png" alt="">
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <nav id="hamburger-nav" class="navbar">
-            <div class="container nav-inner">
-                <a class="logo" href="index.html">
-                    <img src="Images/Logo_Labo-meca-multi-echelles_Ang_3li_RGB.jpg" alt="LM2 logo">
-                </a>
-                <div class="hamburger-menu">
-                    <div class="hamburger-icon" onclick="toggleMenu()">
-                        <span>
-                        </span>
-                        <span>
-                        </span>
-                        <span>
-                        </span>
-                    </div>
-                    <ul class="menu-links">
-                        <li>
-                            <a href="index.html" onclick="toggleMenu()">About</a>
-                        </li>
-                        <li>
-                            <a href="team.html" onclick="toggleMenu()">Members</a>
-                        </li>
-                        <li>
-                            <a href="team-map.html" onclick="toggleMenu()">Origin map</a>
-                        </li>
-                        <li>
-                            <a href="research.html" onclick="toggleMenu()">Research</a>
-                        </li>
-                        <li>
-                            <a href="publications.html" onclick="toggleMenu()">Publications</a>
-                        </li>
-                        <li>
-                            <a href="contact.html" onclick="toggleMenu()">Contact</a>
-                        </li>
-                        <li>
-                            <a href="fr/team.html" onclick="toggleMenu()">Francais</a>
-                        </li>
-                    </ul>
+                    <ul data-desktop-menu></ul>
                 </div>
             </div>
         </nav>
@@ -117,7 +40,7 @@
                     <div class="team-category">
                         <h2>Professors</h2>
                         <div class="member-grid">
-                            <article class="member-card" data-nationality="Canada" data-country-code="CA" data-country-label="AGAG">
+                            <article class="member-card" data-nationality="Canada" data-country-code="CA" data-country-label="Cadada">
                                 <span class="member-nationality">Canada</span>
                                 <img src="Images/Team/Daniel-Therriault.png" alt="Daniel Therriault">
                                 <div class="member-body">
@@ -616,15 +539,64 @@
                     <div class="section-header">
                         <p class="eyebrow">Alumni</p>
                         <h2>Former students</h2>
-                        <p>Former members are listed by year in reverse chronological order.</p>
+                        <p>Former members are listed by category. Use the filters to show graduates or interns.</p>
                     </div>
-                    <ul class="alumni-list">
-                        <li>Jane Doe, PhD, 2024</li>
-                        <li>John Doe, MSc, 2023</li>
-                        <li>Alex Smith, PhD, 2022</li>
-                        <li>Marie Tremblay, MSc, 2021</li>
-                        <li>Chris Martin, PhD, 2019</li>
-                    </ul>
+
+                    <div class="former-student-filters" aria-label="Former student filters">
+                        <button class="filter-btn active" type="button" data-former-filter="all">All</button>
+                        <button class="filter-btn" type="button" data-former-filter="graduate">Graduates</button>
+                        <button class="filter-btn" type="button" data-former-filter="intern">Interns</button>
+                    </div>
+
+                    <div class="former-student-grid">
+                        <article class="former-student-card" data-former-student data-former-category="graduate">
+                            <div class="former-student-info">
+                                <div class="former-student-socials">
+                                    <a href="mailto:raphael-1.plante@polymtl.ca" aria-label="Email Raphaël Plante">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/rapha%C3%ABl-plante-240a171b7/" aria-label="LinkedIn Raphaël Plante">
+                                        <i class="fa-brands fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                                <h3>Raphaël Plante</h3>
+                                <p>PhD graduate, 2026</p>
+                            </div>
+                            <img src="Images/Team/Raphael_Plante.jpg" alt="Raphaël Plante">
+                        </article>
+
+                        <article class="former-student-card" data-former-student data-former-category="graduate">
+                            <div class="former-student-info">
+                                <div class="former-student-socials">
+                                    <a href="mailto:john.doe@example.com" aria-label="Email John Doe">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </a>
+                                    <a href="#" aria-label="LinkedIn John Doe">
+                                        <i class="fa-brands fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                                <h3>John Doe</h3>
+                                <p>MSc graduate, 2023</p>
+                            </div>
+                            <img src="Images/Team/placeholder.jpg" alt="John Doe">
+                        </article>
+
+                        <article class="former-student-card" data-former-student data-former-category="intern">
+                            <div class="former-student-info">
+                                <div class="former-student-socials">
+                                    <a href="mailto:marie.tremblay@example.com" aria-label="Email Marie Tremblay">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </a>
+                                    <a href="#" aria-label="LinkedIn Marie Tremblay">
+                                        <i class="fa-brands fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                                <h3>Marie Tremblay</h3>
+                                <p>Undergraduate intern, 2021</p>
+                            </div>
+                            <img src="Images/Team/placeholder.jpg" alt="Marie Tremblay">
+                        </article>
+                    </div>
                 </div>
             </section>
         </main>
