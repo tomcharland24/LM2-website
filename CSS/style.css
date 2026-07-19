@@ -296,13 +296,13 @@ p {
     color: #fff;
 }
 
-.hero-advanced-manufacturing {
+.hero-soft-robotics {
     min-height: 500px;
     display: flex;
     align-items: center;
     background-image:
-        linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-        url("../Images/PR_J-ARMAND-BOMB_MB_024.webp");
+        linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(255, 255, 255, 0.55)),
+        url("../Images/Hero-page/soft-robotic.webp");
     color: white
 }
 
@@ -312,7 +312,7 @@ p {
     align-items: center;
     background-image:
         linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(255, 255, 255, 0.55)),
-        url("../Images/Hero-page/pattern\ for\ website_origami.webp");
+        url("../Images/Hero-page/multistable-structure.webp");
     color: white
 }
 
@@ -321,9 +321,9 @@ p {
     display: flex;
     align-items: center;
     background-image:
-        linear-gradient(to right, rgba(215, 211, 211, 0.55), rgba(255, 255, 255, 0.55)),
-        url("../Images/Hero-page/team_page.webp");
-    /* color: white */
+        linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(255, 255, 255, 0.55)),
+        url("../Images/Hero-page/team_page_grey.webp");
+    color: white
 }
 
 .hero-origin-map {
@@ -331,13 +331,132 @@ p {
     display: flex;
     align-items: center;
     background-image:
-        linear-gradient(to right, rgba(215, 211, 211, 0.55), rgba(255, 255, 255, 0.55)),
-        url("../Images/Hero-page/origin_map.webp");
-    /* color: white */
+        linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(255, 255, 255, 0.55)),
+        url("../Images/Hero-page/origin_map_grey.webp");
+    color: white
 }
 
-.hero-advanced-manufacturing p:not(.eyebrow),
-.hero-multistable-structures p:not(.eyebrow)  {
+.hero-infrastructure {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(255, 255, 255, 0.55)),
+        url("../Images/Hero-page/infrastructure_grey.webp");
+    color: white
+}
+
+.hero-publication {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(255, 255, 255, 0.55)),
+        url("../Images/Hero-page/publications_grey.webp");
+    color: white
+}
+
+.hero-contact {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(255, 255, 255, 0.55)),
+        url("../Images/Hero-page/contact_grey.webp");
+    color: white
+}
+
+.hero-research {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(255, 255, 255, 0.55)),
+        url("../Images/Hero-page/recherche_grey.webp");
+    color: white
+}
+
+.hero-multiscale-mechanics {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(255, 255, 255, 0.55)),
+        url("../Images/Hero-page/multiscale-mechanics_grey.webp");
+    color: white
+}
+
+.hero-metamaterials {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(255, 255, 255, 0.55)),
+        url("../Images/Hero-page/meta-materiaux_grey.webp");
+    color: white
+}
+
+.hero-biomimetics {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(255, 255, 255, 0.55)),
+        url("../Images/Hero-page/biomimetic_grey.webp");
+    color: white
+}
+
+.hero-deployable-structures {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(255, 255, 255, 0.55)),
+        url("../Images/Hero-page/pattern\ for\ website_origami.webp");
+    color: white
+}
+
+.hero-fluid-structure-interaction {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(255, 255, 255, 0.55)),
+        url("../Images/Hero-page/FSI.webp");
+    color: white
+}
+
+.hero-additive-manufacturing {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(255, 255, 255, 0.55)),
+        url("../Images/Hero-page/fab-additive.webp");
+    color: white
+}
+
+.hero-additive-manufacturing-composite {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(255, 255, 255, 0.55)),
+        url("../Images/Hero-page/fab-add-composite.webp");
+    color: white
+}
+
+.hero-digital-twin {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(255, 255, 255, 0.55)),
+        url("../Images/Hero-page/digital_twin_grey.webp");
+    color: white
+}
+
+.page-hero p:not(.eyebrow){
     color: white;
 }
 
@@ -400,8 +519,10 @@ p {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    /* color: white; */
+    color: white;
 }
+
+
 
 .section {
     padding: 82px 0;
