@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LM2 | Modelisation multi-echelles</title>
+        <link rel="stylesheet" href="../../CSS/style.css">
+        <link rel="stylesheet" href="../../mediaqueries.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="../../Images/LM2_3.png" type="image/png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    </head>
+    <body>
+        <nav id="desktop-nav" class="navbar">
+            <div class="container nav-inner">
+                <a class="logo" data-site-logo href="#">
+                    <img data-site-logo-img src="" alt="LM2 logo">
+                </a>
+
+                <div class="main-menu">
+                    <ul data-desktop-menu></ul>
+                </div>
+            </div>
+        </nav>
+        <nav id="hamburger-nav" class="navbar">
+            <div class="container nav-inner">
+                <a class="logo" href="../index.html">
+                    <img src="../../Images/Logo_Labo-meca-multi-echelles_Fran_3li_RGB.jpg" alt="Logo LM2">
+                </a>
+                <div class="hamburger-menu">
+                    <div class="hamburger-icon" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="menu-links"></ul>
+                </div>
+            </div>
+        </nav>
+        <header class="page-hero">
+            <div class="container">
+                <p class="eyebrow">Theme de recherche</p>
+                <h1>Biomimétique et les systèmes bio-inspirés</h1>
+                <p>Des modeles courts et predictifs relient la microstructure aux performances des pieces.</p>
+            </div>
+        </header>
+        <main>
+            <section class="section">
+                <div class="container grid-2">
+                    <div>
+                        <h2 class="text-xl">Vision</h2>
+                        <p>Ce theme developpe des modeles qui transforment les observations a petite echelle en predictions utiles pour l ingenierie. Les projets combinent essais mecaniques, lois constitutives, simulations numeriques, analyse d images et calibration par les donnees.</p>
+                        <p>L objectif est de relier la comprehension fondamentale aux applications d ingenierie, avec des projets qui peuvent evoluer de l idee au prototype.</p>
+                        <h2 class="text-xl">Utilite</h2>
+                        <p>Cette expertise aide a concevoir, fabriquer et valider des solutions avec moins d essais-erreurs.</p>
+                    </div>
+                    <div class="theme-gallery">
+                        <img src="../../Images/Projects/figure5-Large-e1723645130403-235x300.webp" alt="">
+                        <img src="../../Images/Projects/Concours-genie-image-Maryam-Boukor-flipped-Maryam-Boukor-300x225.webp" alt="">
+                        <img src="../../Images/Projects/Josua-projet-1-e1723586757389-300x166.webp" alt="">
+                    </div>
+                </div>
+            </section>
+            <section class="section alt">
+                <div class="container">
+                    <h2 class="text-xl">Impact potentiel</h2>
+                    <ul class="impact-list">
+                        <li>Approches plus fiables pour concevoir et valider.</li>
+                        <li>Transfert plus direct vers les applications.</li>
+                        <li>Meilleure integration entre modeles, essais et fabrication.</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <p class="eyebrow">Projets lies</p>
+                        <h2>Projets associes a ce theme</h2>
+                    </div>
+                    <div class="project-slider">
+                        <article class="project-tile">
+                            <img src="../../Images/Projects/figure5-Large-e1723645130403-235x300.webp" alt="">
+                            <div class="project-tile-content">
+                                <h3>Reponse constitutive</h3>
+                                <p>Modeliser la deformation des materiaux sous chargements complexes.</p>
+                            </div>
+                        </article>
+                        <article class="project-tile">
+                            <img src="../../Images/Projects/Concours-genie-image-Maryam-Boukor-flipped-Maryam-Boukor-300x225.webp" alt="">
+                            <div class="project-tile-content">
+                                <h3>Microstructures</h3>
+                                <p>Relier images et essais a des parametres predictifs.</p>
+                            </div>
+                        </article>
+                        <article class="project-tile">
+                            <img src="../../Images/Projects/Josua-projet-1-e1723586757389-300x166.webp" alt="">
+                            <div class="project-tile-content">
+                                <h3>Simulation</h3>
+                                <p>Utiliser les outils numeriques pour guider les experiences.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <a class="footer-logo" href="../index.html">
+                    <img src="../../Images/LM2_3.png" alt="LM2">
+                </a>
+                <div class="footer-socials">
+                    <a href="https://github.com/lm2-poly">
+                        <!-- <img class="icon-github" src="Images/Icons/github.webp" alt="GitHub"> -->
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/company/laboratory-for-multiscale-mechanics-lm2">
+                        <!-- <img class="icon-linkedin" src="Images/Icons/linkedin.webp" alt="LinkedIn"> -->
+                         <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="https://www.youtube.com/@LM2PolyMtl">
+                        <!-- <img class="icon-youtube" src="Images/Icons/youtube.webp" alt="YouTube"> -->
+                         <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+                <p class="footer-copy">&copy; 2026 LM2. Tous droits reserves.</p>
+            </div>
+        </footer>
+        <script src="../../js/main.js">
+        </script>
+    </body>
+</html>

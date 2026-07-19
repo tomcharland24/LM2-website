@@ -249,14 +249,16 @@ function setupDesktopMenuContent() {
         <li class="nav-item">
             <a class="nav-link${activeClass("research")}" href="${prefix}research.html">${labels.research}</a>
             <div class="dropdown-menu">
-                <a href="${prefix}research/additive-manufacturing.html">${isFrench ? "Fabrication additive" : "Additive Manufacturing"}</a>
                 <a href="${prefix}research/multiscale-mechanics.html">${isFrench ? "M&eacute;canique multi-&eacute;chelles" : "Multiscale Mechanics"}</a>
+                <a href="${prefix}research/mechanical-metamaterials.html">${isFrench ? "Métamatériaux mécaniques" : "Mechanical Metamaterials"}</a>
                 <a href="${prefix}research/multistable-structures.html">${isFrench ? "Structures multistables" : "Multistable Structures"}</a>
-                <a href="${prefix}research/fluids-slender-structures.html">${isFrench ? "Fluides et structures &eacute;lanc&eacute;es" : "Fluids and Slender Structures"}</a>
+                <a href="${prefix}research/biomimetics-bio-inspiredsystems.html">${isFrench ? "Biomimétique et les systèmes bio-inspirés" : "Biomimetics & Bio-Inspired Systems"}</a>
+                <a href="${prefix}research/deployable-structures-inspired-origami-kirigami.html">${isFrench ? "Structures déployables inspirées d'origami et kirigami" : "Deployable Structures Inspired by Origami and Kirigami"}</a>
+                <a href="${prefix}research/soft-robotics.html">${isFrench ? "Robotique souple" : "Soft Robotics"}</a>
+                <a href="${prefix}research/fluids-structures-interactions.html">${isFrench ? "Interactions fluide-structure" : "Fluid–Structure Interactions"}</a>
+                <a href="${prefix}research/additive-manufacturing.html">${isFrench ? "Fabrication additive" : "Additive Manufacturing"}</a>             
                 <a href="${prefix}research/additive-manufacturing-smart-composites.html">${isFrench ? "Fabrication additive de composites intelligents" : "Additive Manufacturing of Smart Composites"}</a>
-                <a href="${prefix}research/multiscale-modeling.html">${isFrench ? "Mod&eacute;lisation multi-&eacute;chelles" : "Multiscale modeling"}</a>
-                <a href="${prefix}research/advanced-manufacturing.html">${isFrench ? "Fabrication avanc&eacute;e" : "Advanced manufacturing"}</a>
-                <a href="${prefix}research/smart-structures.html">${isFrench ? "Structures intelligentes" : "Smart structures"}</a>
+                <a href="${prefix}research/digital-twins-physics-informed-AI.html">${isFrench ? "Jumeaux numériques et IA guidée par la physique" : "Digital Twins & Physics-Informed AI"}</a>
             </div>
         </li>
         <li>

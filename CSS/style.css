@@ -170,12 +170,20 @@ p {
     color: var(--primary-color);
 }
 
-.dropdown-menu:has(a[href*="additive-manufacturing"]),
+.dropdown-menu:has(a[href*="additive-manufacturing"]){
+    width: max-content;
+    max-width: min(700px, calc(100vw - 32px));
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4px;
+}
+
+
 .dropdown-menu:has(a[href*="team-map"]) {
     width: max-content;
     max-width: min(760px, calc(100vw - 32px));
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 4px;
 }
 
@@ -281,11 +289,61 @@ p {
 }
 
 .hero {
-    min-height: 590px;
+    min-height: 500px;
     display: flex;
     align-items: center;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.18)), url("../Images/PR_J-ARMAND-BOMB_MB_019.webp") center/cover no-repeat;
     color: #fff;
+}
+
+.hero-advanced-manufacturing {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+        url("../Images/PR_J-ARMAND-BOMB_MB_024.webp");
+    color: white
+}
+
+.hero-multistable-structures {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(255, 255, 255, 0.55)),
+        url("../Images/Hero-page/pattern\ for\ website_origami.webp");
+    color: white
+}
+
+.hero-team {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background-image:
+        linear-gradient(to right, rgba(215, 211, 211, 0.55), rgba(255, 255, 255, 0.55)),
+        url("../Images/Hero-page/team_page.webp");
+    /* color: white */
+}
+
+.hero-origin-map {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background-image:
+        linear-gradient(to right, rgba(215, 211, 211, 0.55), rgba(255, 255, 255, 0.55)),
+        url("../Images/Hero-page/origin_map.webp");
+    /* color: white */
+}
+
+.hero-advanced-manufacturing p:not(.eyebrow),
+.hero-multistable-structures p:not(.eyebrow)  {
+    color: white;
+}
+
+
+.hero-advanced-manufacturing .eyebrow {
+    color: var(--primary-color);
 }
 
 .hero .container {
@@ -323,6 +381,8 @@ p {
 .hero p,
 .page-hero p {
     font-size: 1.1rem;
+    width: 70%;
+    /* max-width: 760px; */
 }
 
 .hero p {
@@ -330,9 +390,17 @@ p {
     max-width: 760px;
 }
 
-.page-hero {
+/* .page-hero {
     padding: 80px 0;
     background: var(--light-color);
+} */
+
+.page-hero {
+    padding: 120px 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* color: white; */
 }
 
 .section {
@@ -396,7 +464,7 @@ p {
 
 .image-panel {
     width: 100%;
-    height: 360px;
+    height: 500px;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -802,6 +870,11 @@ p {
     border-radius: 8px;
     background: #fff;
     overflow: hidden;
+}
+
+.origin-map-preview {
+    width: 100%;
+    min-height: 360px;
 }
 
 .origin-list {
