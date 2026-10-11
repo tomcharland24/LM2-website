@@ -53,8 +53,7 @@
                 <div class="container map-layout">
                     <div id="team-geochart" class="origin-map" data-geochart aria-label="Carte des nationalites de l'equipe">
                     </div>
-                    <ul class="origin-list" data-origin-list>
-                    </ul>
+                    <aside class="origin-panel"><label for="origin-filter">Explorer la communauté du LM2</label><select id="origin-filter" data-origin-filter><option value="all">Tous les membres depuis toujours</option><option value="active">Membres actifs</option><option value="alumni">Anciens, y compris les anciens stagiaires</option></select><div class="origin-stats"><div><strong data-origin-total>0</strong><span> personnes</span></div><div><strong data-origin-countries>0</strong><span> pays</span></div><div><strong data-origin-leading>—</strong><span> le plus représenté</span></div></div><p>Les catégories proviennent automatiquement des sections de la page Équipe. Seuls des totaux agrégés sont affichés.</p></aside>
                 </div>
             </section>
         </main>
@@ -82,7 +81,7 @@
                 <p class="footer-copy">&copy; 2026 LM2. Tous droits reserves.</p>
             </div>
         </footer>
-        <script>window.LM2_TEAM_NATIONALITIES=[{name:"David Melancon",role:"Professeur",country:"Canada",code:"CA"},{name:"Daniel Therriault",role:"Professeur",country:"Canada",code:"CA"},{name:"Martin Levesque",role:"Professeur",country:"Canada",code:"CA"},{name:"Nom du professeur",role:"Professeur",country:"France",code:"FR"},{name:"Nom du professeur",role:"Professeur",country:"Canada",code:"CA"},{name:"Nom du membre",role:"Postdoctorant",country:"Inde",code:"IN"},{name:"Nom du membre",role:"Postdoctorant",country:"Vietnam",code:"VN"},{name:"Nom du membre",role:"Doctorant",country:"Colombie",code:"CO"},{name:"Nom du membre",role:"Doctorant",country:"Cote d'Ivoire",code:"CI"},{name:"Nom du membre",role:"Doctorant",country:"Chine",code:"CN"},{name:"Nom du membre",role:"Maitrise",country:"France",code:"FR"},{name:"Nom du membre",role:"Maitrise",country:"France",code:"FR"}];</script>
+        <script>window.LM2_ORIGIN_COUNTS=[{country:"Canada",code:"CA",status:"current",group:"faculty",count:4},{country:"Inde",code:"IN",status:"current",group:"faculty",count:1},{country:"Canada",code:"CA",status:"current",group:"students",count:1},{country:"Vietnam",code:"VN",status:"current",group:"students",count:9},{country:"Colombie",code:"CO",status:"current",group:"students",count:1},{country:"Côte d'Ivoire",code:"CI",status:"current",group:"students",count:1},{country:"Chine",code:"CN",status:"current",group:"students",count:1},{country:"Allemagne",code:"DE",status:"current",group:"students",count:1},{country:"France",code:"FR",status:"current",group:"students",count:1}];</script>
         <script src="https://www.gstatic.com/charts/loader.js">
         </script>
         <script src="../js/main.js">

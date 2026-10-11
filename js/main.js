@@ -8,6 +8,21 @@ function toggleMenu() {
     icon.classList.toggle("open");
 }
 
+function setupScrollLogo() {
+    const logos = Array.from(document.querySelectorAll(".navbar .logo img"));
+    logos.forEach((logo) => { logo.dataset.fullLogo = logo.src; });
+    const update = () => {
+        const compact = window.scrollY > 24;
+        document.body.classList.toggle("page-scrolled", compact);
+        logos.forEach((logo) => {
+            const compactUrl = new URL("Labo-meca-multi-echelles_LM-carre_RGB.jpg", logo.dataset.fullLogo).href;
+            logo.src = compact ? compactUrl : logo.dataset.fullLogo;
+        });
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+}
+
 function setupMobileMenuContent() {
     const menu = document.querySelector(".menu-links");
 
@@ -66,58 +81,41 @@ function setupPublicationFilters() {
     themeSelect.addEventListener("change", filterPublications);
 }
 
-function getStoredTeamNationalities() {
-    const stored = window.localStorage.getItem("lm2TeamNationalities");
-
-    if (!stored) return window.LM2_TEAM_NATIONALITIES || [];
-
+async function getTeamOriginRecords() {
     try {
-        return JSON.parse(stored);
+        const response = await fetch("team.html");
+        if (!response.ok) throw new Error("Team page unavailable");
+        const documentCopy = new DOMParser().parseFromString(await response.text(), "text/html");
+        const readCards = (selector, status) => Array.from(documentCopy.querySelectorAll(selector))
+            .filter((card) => card.dataset.nationality && card.dataset.countryCode)
+            .map((card) => ({
+                country: card.dataset.countryLabel || card.dataset.nationality,
+                code: card.dataset.countryCode,
+                status,
+                count: 1
+            }));
+
+        return [
+            ...readCards(".team-category .member-card[data-nationality]", "active"),
+            ...readCards(".former-student-grid .former-student-card[data-nationality]", "alumni")
+        ];
     } catch (error) {
-        return window.LM2_TEAM_NATIONALITIES || [];
+        return window.LM2_ORIGIN_COUNTS || [];
     }
 }
 
-function setupTeamNationalityData() {
-    const cards = Array.from(document.querySelectorAll("[data-nationality]"));
-
-    if (cards.length === 0) return;
-
-    const nationalities = cards.map((card) => {
-        const name = card.querySelector("h3")?.textContent.trim() || "Team member";
-        const role = card.querySelector(".member-meta")?.textContent.trim() || "";
-
-        return {
-            name,
-            role,
-            country: card.dataset.nationality,
-            code: card.dataset.countryCode || card.dataset.nationality,
-            label: card.dataset.countryLabel || card.dataset.nationality
-        };
-    }).filter((member) => member.country);
-
-    window.localStorage.setItem("lm2TeamNationalities", JSON.stringify(nationalities));
-}
-
-function drawTeamGeoChart() {
+async function drawTeamGeoChart() {
     const chartContainer = document.querySelector("[data-geochart]");
-    const listContainer = document.querySelector("[data-origin-list]");
 
     if (!chartContainer || typeof google === "undefined" || !google.visualization) return;
 
-    const members = getStoredTeamNationalities();
-    const countryCounts = members.reduce((counts, member) => {
+    const filter = document.querySelector("[data-origin-filter]")?.value || "all";
+    const allRecords = await getTeamOriginRecords();
+    const records = allRecords.filter((record) => filter === "all" || record.status === filter || (filter === "active" && record.status === "current"));
+    const countryCounts = records.reduce((counts, member) => {
         const key = member.code || member.country;
-        const current = counts.get(key) || {
-            country: member.country,
-            code: key,
-            label: member.label || member.country,
-            count: 0,
-            names: []
-        };
-
-        current.count += 1;
-        current.names.push(member.name);
+        const current = counts.get(key) || { country: member.country, code: key, count: 0 };
+        current.count += member.count;
         counts.set(key, current);
 
         return counts;
@@ -144,12 +142,15 @@ function drawTeamGeoChart() {
     const chart = new google.visualization.GeoChart(chartContainer);
     chart.draw(data, options);
 
-    if (listContainer) {
-        listContainer.innerHTML = Array.from(countryCounts.values())
-            .sort((a, b) => b.count - a.count || a.country.localeCompare(b.country))
-            .map((item) => `<li><strong>${item.label}</strong><br>${item.names.join(", ")}</li>`)
-            .join("");
-    }
+    const values = Array.from(countryCounts.values());
+    const total = values.reduce((sum, item) => sum + item.count, 0);
+    const leading = values.sort((a, b) => b.count - a.count)[0];
+    const totalElement = document.querySelector("[data-origin-total]");
+    const countriesElement = document.querySelector("[data-origin-countries]");
+    const leadingElement = document.querySelector("[data-origin-leading]");
+    if (totalElement) totalElement.textContent = total;
+    if (countriesElement) countriesElement.textContent = values.length;
+    if (leadingElement) leadingElement.textContent = leading?.country || "—";
 }
 
 function setupTeamGeoChart() {
@@ -165,6 +166,7 @@ function setupTeamGeoChart() {
     google.charts.load("current", { packages: ["geochart"] });
     google.charts.setOnLoadCallback(drawTeamGeoChart);
     window.addEventListener("resize", drawTeamGeoChart);
+    document.querySelector("[data-origin-filter]")?.addEventListener("change", drawTeamGeoChart);
 }
 function setupInfrastructureFilters() {
     const buttons = Array.from(document.querySelectorAll("[data-infrastructure-filter]"));
@@ -346,11 +348,11 @@ function setupFormerStudentFilters() {
 
 document.addEventListener("DOMContentLoaded", () => {
     setupDesktopMenuContent();
+    setupScrollLogo();
     setupMobileMenuContent();
     setupAboutCarousel();
     setupPublicationFilters();
     setupInfrastructureFilters();
-    setupTeamNationalityData();
     setupFormerStudentFilters();
     setupTeamGeoChart();
 });

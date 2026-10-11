@@ -50,14 +50,16 @@ function renderPublications(publications) {
         .map((publication) => {
             const authors = (publication.authors || []).join(", ");
             const link = publication.url || (publication.doi ? `https://doi.org/${publication.doi}` : "#");
-            const label = publication.doi ? "DOI" : "PolyPublie";
+            const title = escapeHtml(publication.title);
+            const linkedTitle = link === "#"
+                ? `<span class="pub-title">“${title}”</span>`
+                : `<a class="pub-title" href="${escapeHtml(link)}" target="_blank" rel="noopener">“${title}”</a>`;
+            const journal = publication.journal || publication.type;
+            const details = [publication.publisher, publication.year].filter(Boolean).join(", ");
 
             return `
                 <article class="publication-card">
-                    <p class="pub-meta">${escapeHtml(publication.year)} | ${escapeHtml(publication.journal || publication.type)}</p>
-                    <h3>${escapeHtml(publication.title)}</h3>
-                    <p>${escapeHtml(authors)}</p>
-                    <a class="btn btn-outline" href="${escapeHtml(link)}" target="_blank" rel="noopener">${label}</a>
+                    <p class="pub-citation">${escapeHtml(authors)}. ${linkedTitle} <span class="pub-journal">${escapeHtml(journal)}</span>${details ? `, ${escapeHtml(details)}` : ""}${publication.doi ? `. <a class="pub-doi" href="${escapeHtml(link)}" target="_blank" rel="noopener">DOI</a>` : "."}</p>
                 </article>
             `;
         })

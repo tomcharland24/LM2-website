@@ -15,7 +15,7 @@
     --max-width: 1500px;
     --content-width: 1700px;
     --member-card-width: 332px;
-    --member-card-height: 600px;
+    --member-card-height: 615px;
     --infrastructure-card-width: 332px;
     --infrastructure-card-height: 450px;
 }
@@ -98,7 +98,11 @@ p {
 
 .logo img {
     width: 170px;
+    max-height: 72px;
+    object-fit: contain;
+    transition: width 180ms ease;
 }
+.page-scrolled .logo img { width: 86px; }
 
 .logo-mark img {
     width: 58px;
@@ -928,6 +932,7 @@ p {
 
 .former-student-info {
     min-width: 0;
+    align-self: start;
 }
 
 .former-student-socials {
@@ -937,8 +942,8 @@ p {
 }
 
 .former-student-socials a {
-    width: 26px;
-    height: 26px;
+    width: 30px;
+    height: 30px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -956,6 +961,10 @@ p {
     color: #fff;
 }
 
+.former-student-socials i {
+    font-size: 14px;
+}
+
 .former-student-card h3 {
     color: var(--dark-color);
     font-size: 0.98rem;
@@ -967,6 +976,24 @@ p {
     color: #111;
     font-size: 0.9rem;
     line-height: 1.35;
+}
+
+.former-student-card .former-student-status {
+    color: var(--primary-color);
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.former-student-card .former-student-research {
+    margin-top: 6px;
+    font-size: 0.76rem;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.former-student-research:empty {
+    display: none;
 }
 
 .former-student-card img {
@@ -1016,6 +1043,13 @@ p {
     border-radius: 8px;
     background: #fff;
 }
+.origin-panel { width:100%; display:grid; gap:16px; padding:22px; border:1px solid var(--border-color); border-radius:8px; background:#fff; }
+.origin-panel label { font-weight:700; }
+.origin-panel select { padding:12px 14px; border:1px solid var(--border-color); border-radius:8px; font:inherit; }
+.origin-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.origin-stats div { padding:14px; background:var(--light-color); border-radius:8px; }
+.origin-stats strong { display:block; color:var(--primary-color); font-size:1.55rem; }
+.former-student-origin { color:var(--primary-color); font-size:.82rem; font-weight:600; }
 
 .member-nationality {
     display: none;
@@ -1061,7 +1095,15 @@ p {
 
 .publication-card {
     padding: 20px;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: 0 5px 18px rgba(17,17,17,.06);
 }
+.publication-card h3 { color:#0669d7; }
+.pub-citation { color:var(--text-color); }
+.pub-journal { font-style:italic; }
+.pub-citation { margin: 0; line-height: 1.75; }
+.pub-title, .pub-doi { color:#0669d7; font-weight:500; }
+.pub-title:hover, .pub-doi:hover { text-decoration:underline; }
 
 .publication-card.hidden {
     display: none;
