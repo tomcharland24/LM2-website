@@ -284,44 +284,43 @@ function setupDesktopMenuContent() {
 }
 
 function setupAboutCarousel() {
-    const carousel = document.querySelector("[data-about-carousel]");
+    document.querySelectorAll("[data-about-carousel]").forEach((carousel) => {
+        const images = Array.from(carousel.querySelectorAll(".image-panel"));
+        if (images.length === 0) return;
+        const prevButton = carousel.querySelector("[data-carousel-prev]");
+        const nextButton = carousel.querySelector("[data-carousel-next]");
+        let currentIndex = 0;
+        let intervalId;
 
-    if (!carousel) return;
+        function showImage(index) {
+            currentIndex = (index + images.length) % images.length;
 
-    const images = Array.from(carousel.querySelectorAll(".image-panel"));
-    const prevButton = carousel.querySelector("[data-carousel-prev]");
-    const nextButton = carousel.querySelector("[data-carousel-next]");
-    let currentIndex = 0;
-    let intervalId;
+            images.forEach((image, imageIndex) => {
+                image.classList.toggle("active", imageIndex === currentIndex);
+            });
+        }
 
-    function showImage(index) {
-        currentIndex = (index + images.length) % images.length;
+        function nextImage() {
+            showImage(currentIndex + 1);
+        }
 
-        images.forEach((image, imageIndex) => {
-            image.classList.toggle("active", imageIndex === currentIndex);
+        function restartInterval() {
+            window.clearInterval(intervalId);
+            intervalId = window.setInterval(nextImage, 5000);
+        }
+
+        prevButton?.addEventListener("click", () => {
+            showImage(currentIndex - 1);
+            restartInterval();
         });
-    }
 
-    function nextImage() {
-        showImage(currentIndex + 1);
-    }
+        nextButton?.addEventListener("click", () => {
+            showImage(currentIndex + 1);
+            restartInterval();
+        });
 
-    function restartInterval() {
-        window.clearInterval(intervalId);
-        intervalId = window.setInterval(nextImage, 5000);
-    }
-
-    prevButton?.addEventListener("click", () => {
-        showImage(currentIndex - 1);
         restartInterval();
     });
-
-    nextButton?.addEventListener("click", () => {
-        showImage(currentIndex + 1);
-        restartInterval();
-    });
-
-    restartInterval();
 }
 
 function setupFormerStudentFilters() {
