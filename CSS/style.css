@@ -589,7 +589,7 @@ p {
 
 .image-panel {
     width: 100%;
-    height: 500px;
+    height: 550px;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -1353,7 +1353,7 @@ p {
 .about-carousel {
     position: relative;
     width: 100%;
-    height: 360px;
+    height: 450px;
     overflow: hidden;
     border-radius: 8px;
 }
