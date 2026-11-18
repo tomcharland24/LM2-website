@@ -38,7 +38,7 @@ function setupMobileMenuContent() {
 
     const aboutLabel = isFrench ? "&Agrave; propos" : "About";
     const teamLabel = isFrench ? "&Eacute;quipe" : "Team";
-    const languageLabel = isFrench ? "English" : "Francais";
+    const languageLabel = isFrench ? "English" : "Français";
     const logoPrefix = isFrench ? (inResearchFolder ? "../../" : "../") : prefix;
 
     menu.innerHTML = `
@@ -46,7 +46,7 @@ function setupMobileMenuContent() {
         <li><a href="${prefix}team.html" onclick="toggleMenu()">${teamLabel}</a></li>
         <li><a href="${prefix}research.html" onclick="toggleMenu()">${isFrench ? "Recherche" : "Research"}</a></li>
         <li><a href="${prefix}publications.html" onclick="toggleMenu()">Publications</a></li>
-        <li><a href="${prefix}infrastructure.html" onclick="toggleMenu()">Infrastructure</a></li>
+        <li><a href="${prefix}infrastructure.html" onclick="toggleMenu()">${isFrench ? "Infrastructures" : "Infrastructure"}</a></li>
         <li><a href="${prefix}contact.html" onclick="toggleMenu()">Contact</a></li>
         <li><a href="${languageHref}" onclick="toggleMenu()">${languageLabel}</a></li>
         <li class="mobile-menu-logo"><img src="${logoPrefix}Images/LM2_3.png" alt=""></li>
@@ -91,6 +91,7 @@ async function getTeamOriginRecords() {
             .map((card) => ({
                 country: card.dataset.countryLabel || card.dataset.nationality,
                 code: card.dataset.countryCode,
+                personId: card.dataset.personId,
                 status,
                 count: 1
             }));
@@ -100,7 +101,7 @@ async function getTeamOriginRecords() {
             ...readCards(".former-student-grid .former-student-card[data-nationality]", "alumni")
         ];
     } catch (error) {
-        return window.LM2_ORIGIN_COUNTS || [];
+        return [];
     }
 }
 
@@ -111,7 +112,14 @@ async function drawTeamGeoChart() {
 
     const filter = document.querySelector("[data-origin-filter]")?.value || "all";
     const allRecords = await getTeamOriginRecords();
-    const records = allRecords.filter((record) => filter === "all" || record.status === filter || (filter === "active" && record.status === "current"));
+    const seen = new Set();
+    const records = allRecords.filter((record) => {
+        if (filter !== "all" && record.status !== filter) return false;
+        if (!record.personId) return true;
+        if (seen.has(record.personId)) return false;
+        seen.add(record.personId);
+        return true;
+    });
     const countryCounts = records.reduce((counts, member) => {
         const key = member.code || member.country;
         const current = counts.get(key) || { country: member.country, code: key, count: 0 };
@@ -123,7 +131,7 @@ async function drawTeamGeoChart() {
 
     const rows = Array.from(countryCounts.values()).map((item) => [item.code, item.count]);
     const data = google.visualization.arrayToDataTable([
-        ["Country", "Members"],
+        document.documentElement.lang === "fr" ? ["Pays", "Membres"] : ["Country", "Members"],
         ...rows
     ]);
 
@@ -159,7 +167,9 @@ function setupTeamGeoChart() {
     if (!chartContainer) return;
 
     if (typeof google === "undefined" || !google.charts) {
-        chartContainer.innerHTML = "<p>Google Charts could not be loaded.</p>";
+        chartContainer.textContent = document.documentElement.lang === "fr"
+            ? "Impossible de charger la carte."
+            : "The map could not be loaded.";
         return;
     }
 
@@ -178,7 +188,10 @@ function setupInfrastructureFilters() {
         button.addEventListener("click", () => {
             const filter = button.dataset.infrastructureFilter;
 
-            buttons.forEach((item) => item.classList.toggle("active", item === button));
+            buttons.forEach((item) => {
+                item.classList.toggle("active", item === button);
+                item.setAttribute("aria-pressed", String(item === button));
+            });
 
             sections.forEach((section) => {
                 const isVisible = filter === "all" || section.dataset.infrastructureSection === filter;
@@ -210,7 +223,7 @@ function setupDesktopMenuContent() {
         members: isFrench ? "Membres" : "Members",
         originMap: isFrench ? "Carte des origines" : "Origin map",
         research: isFrench ? "Recherche" : "Research",
-        infrastructure: "Infrastructure",
+        infrastructure: isFrench ? "Infrastructures" : "Infrastructure",
         publications: "Publications",
         contact: "Contact",
         language: isFrench ? "EN" : "FR"
@@ -254,8 +267,8 @@ function setupDesktopMenuContent() {
                 <a href="${prefix}research/multiscale-mechanics.html">${isFrench ? "M&eacute;canique multi-&eacute;chelles" : "Multiscale Mechanics"}</a>
                 <a href="${prefix}research/mechanical-metamaterials.html">${isFrench ? "Métamatériaux mécaniques" : "Mechanical Metamaterials"}</a>
                 <a href="${prefix}research/multistable-structures.html">${isFrench ? "Structures multistables" : "Multistable Structures"}</a>
-                <a href="${prefix}research/biomimetics-bio-inspiredsystems.html">${isFrench ? "Biomimétique et les systèmes bio-inspirés" : "Biomimetics & Bio-Inspired Systems"}</a>
-                <a href="${prefix}research/deployable-structures-inspired-origami-kirigami.html">${isFrench ? "Structures déployables inspirées d'origami et kirigami" : "Deployable Structures Inspired by Origami and Kirigami"}</a>
+                <a href="${prefix}research/biomimetics-bio-inspiredsystems.html">${isFrench ? "Biomimétique et systèmes bio-inspirés" : "Biomimetics & Bio-Inspired Systems"}</a>
+                <a href="${prefix}research/deployable-structures-inspired-origami-kirigami.html">${isFrench ? "Structures déployables inspirées de l’origami et du kirigami" : "Deployable Structures Inspired by Origami and Kirigami"}</a>
                 <a href="${prefix}research/soft-robotics.html">${isFrench ? "Robotique souple" : "Soft Robotics"}</a>
                 <a href="${prefix}research/fluids-structures-interactions.html">${isFrench ? "Interactions fluide-structure" : "Fluid–Structure Interactions"}</a>
                 <a href="${prefix}research/additive-manufacturing.html">${isFrench ? "Fabrication additive" : "Additive Manufacturing"}</a>             

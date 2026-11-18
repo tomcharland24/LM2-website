@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>LM2 | Infrastructure</title>
+        <title>Infrastructures | LM2</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
         <nav id="desktop-nav" class="navbar">
             <div class="container nav-inner">
                 <a class="logo" data-site-logo href="#">
-                    <img data-site-logo-img src="" alt="LM2 logo">
+                    <img data-site-logo-img src="" alt="Logo LM2">
                 </a>
 
                 <div class="main-menu">
@@ -41,123 +41,580 @@
         </nav>
         <header class="page-hero hero-infrastructure">
             <div class="container">
-                <p class="eyebrow">Infrastructure</p>
-                <h1>Laboratory Infrastructure</h1>
-                <p>Explore the equipment and instruments available at LM2 for manufacturing, material processing, characterization, and experimental support.</p>
+                <p class="eyebrow">Infrastructures</p>
+                <h1>Infrastructure de laboratoire</h1>
+                <p>Explorez les équipements du LM2 et du Laboratoire des structures intelligentes.</p>
             </div>
         </header>
         <main>
             <section class="section">
                 <div class="container">
-                    <div class="infrastructure-filters" aria-label="Infrastructure filters">
-                        <button class="filter-btn active" type="button" data-infrastructure-filter="all">All</button>
-                        <button class="filter-btn" type="button" data-infrastructure-filter="additive-manufacturing">Additive Manufacturing</button>
-                        <button class="filter-btn" type="button" data-infrastructure-filter="material-processing">Material Processing</button>
-                        <button class="filter-btn" type="button" data-infrastructure-filter="optical-characterization">Optical Characterization</button>
-                        <button class="filter-btn" type="button" data-infrastructure-filter="supporting-equipment">Supporting Instrument and Equipment</button>
+                    <div class="infrastructure-filters" aria-label="Filtres des équipements">
+                        <button class="filter-btn active" type="button" data-infrastructure-filter="all" aria-pressed="true">Tout</button>
+                        <button class="filter-btn" type="button" data-infrastructure-filter="additive-manufacturing" aria-pressed="false">Fabrication additive</button>
+                        <button class="filter-btn" type="button" data-infrastructure-filter="material-processing" aria-pressed="false">Transformation des matériaux</button>
+                        <button class="filter-btn" type="button" data-infrastructure-filter="optical-characterization" aria-pressed="false">Caractérisation optique</button>
+                        <button class="filter-btn" type="button" data-infrastructure-filter="mechanical-testing" aria-pressed="false">Essais mécaniques</button>
+                        <button class="filter-btn" type="button" data-infrastructure-filter="supporting-equipment" aria-pressed="false">Équipements auxiliaires</button>
                     </div>
-
-                    <div class="infrastructure-section" data-infrastructure-section="additive-manufacturing">
-                        <h2>Additive Manufacturing</h2>
+                    <section class="infrastructure-section" data-infrastructure-section="additive-manufacturing">
+                        <h2>Fabrication additive</h2>
                         <div class="infrastructure-grid">
                             <article class="infrastructure-card">
-                                <img src="../Images/Infrastructure/3devo Filament Maker TWO.png" alt="Direct ink writing system">
+                                <img src="../Images/Infrastructure/aon3d-hylo.png" alt="AON3D Hylo (×2)" loading="lazy" decoding="async">
                                 <div class="infrastructure-body">
-                                    <p class="infrastructure-category">Additive Manufacturing</p>
-                                    <h3>Direct Ink Writing System</h3>
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>AON3D Hylo (×2)</h3>
                                     <details class="infrastructure-details">
-                                        <summary>
-                                            <span class="summary-closed">Description</span>
-                                            <span class="summary-open">Fermer</span>
-                                        </summary>
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
                                         <div class="infrastructure-description">
-                                            <p>Used to print functional inks, soft materials, and architected structures with controlled deposition paths. The system supports controlled deposition strategies for experimental manufacturing and material development.</p>
+                                            <p>Imprimantes à filament en enceinte fermée pour thermoplastiques techniques, dont le PEKK et le PEI. Température maximale de buse de 500 °C et chambre chauffée jusqu’à 135 °C.</p>
                                         </div>
                                     </details>
                                 </div>
                             </article>
-
                             <article class="infrastructure-card">
-                                <img src="../Images/Infrastructure/extrusora.jpg" alt="3D printer">
+                                <img src="../Images/Infrastructure/aerotech-large-format.png" alt="Plateforme Aerotech grand format" loading="lazy" decoding="async">
                                 <div class="infrastructure-body">
-                                    <p class="infrastructure-category">Additive Manufacturing</p>
-                                    <h3>3D Printer</h3>
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>Aerotech — grand format</h3>
                                     <details class="infrastructure-details">
-                                        <summary>
-                                            <span class="summary-closed">Description</span>
-                                            <span class="summary-open">Fermer</span>
-                                        </summary>
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
                                         <div class="infrastructure-description">
-                                            <p>Used to print functional inks, soft materials, and architected structures with controlled deposition paths. The system supports controlled deposition strategies for experimental manufacturing and material development.</p>
+                                            <p>Plateforme de mouvement grand format Automation1 à outils interchangeables pour l’extrusion de filament ou de granulés, l’écriture directe à l’encre et d’autres procédés.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/formlabs-form-4.jpg" alt="Formlabs Form 4" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>Formlabs Form 4</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Imprimante à résine pour prototypes détaillés, par stéréolithographie masquée.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/formlabs-form-3.jpg" alt="Formlabs Form 3" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>Formlabs Form 3</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Imprimante à stéréolithographie laser de 145 × 145 × 175 mm pour résines standard, souples et techniques.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/aerotech.jpg" alt="Aerotech" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>Aerotech</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Plateforme de mouvement de précision permettant d’intégrer des têtes interchangeables d’extrusion, de dépôt par seringue et de dépôt sur mesure.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/fanuc-six-axis.jpg" alt="FANUC — 6 axes" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>FANUC — 6 axes</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Bras robotisé de 1 853 mm de portée et de 25 kg de charge au poignet pour le dépôt non planaire. Les têtes sur mesure permettent l’extrusion de filament et l’écriture directe à l’encre.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/bambu-lab-x1e.jpeg" alt="Bambu Lab X1E (×6)" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>Bambu Lab X1E (×6)</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Imprimantes à filament dotées de buses de 0,2 à 0,8 mm, d’un nivellement automatique du plateau et de caméras de suivi.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/prusa-xl.jpeg" alt="Prusa XL (×3)" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>Prusa XL (×3)</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Imprimantes à filament grand format avec têtes modulaires et plateau chauffant segmenté pour l’impression multimatériau.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/creality-ender-3-v2.jpeg" alt="Creality Ender 3 V2" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire des structures intelligentes</p>
+                                    <h3>Creality Ender 3 V2</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Imprimante à filament avec plateau en verre pour le prototypage.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/fanuc-fibre-placement.png" alt="FANUC M-710iC (AFP)" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire des structures intelligentes</p>
+                                    <h3>FANUC M-710iC (AFP)</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Cellule de placement automatisé de rubans de fibres de carbone continues sur outillage tridimensionnel, avec rouleau de compactage pneumatique.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/creality-k1c.png" alt="Creality K1C" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire des structures intelligentes</p>
+                                    <h3>Creality K1C</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Imprimante à filament CoreXY en enceinte fermée, de 220 × 220 × 250 mm, pour polymères techniques et filaments chargés de fibres.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/creality-ender-3-v2-idex.jpeg" alt="Creality Ender 3 V2 (IDEX)" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire des structures intelligentes</p>
+                                    <h3>Creality Ender 3 V2 (IDEX)</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Imprimante à filament modifiée à deux extrudeuses indépendantes, pour fabriquer des pièces bimatières ou en miroir.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/flashforge-foto-8-9.jpeg" alt="Flashforge Foto 8.9" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire des structures intelligentes</p>
+                                    <h3>Flashforge Foto 8.9</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Imprimante à résine dotée d’un écran ACL monochrome 4K de 8,9 pouces et de deux rails sur l’axe Z.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/creality-ender-3-s1.jpeg" alt="Creality Ender 3 S1" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire des structures intelligentes</p>
+                                    <h3>Creality Ender 3 S1</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Imprimante à filament avec extrudeuse directe Sprite et nivellement automatique CR-Touch.</p>
                                         </div>
                                     </details>
                                 </div>
                             </article>
                         </div>
-                    </div>
-
-                    <div class="infrastructure-section" data-infrastructure-section="optical-characterization">
-                        <h2>Optical Characterization</h2>
+                    </section>
+                    <section class="infrastructure-section" data-infrastructure-section="material-processing">
+                        <h2>Transformation des matériaux</h2>
                         <div class="infrastructure-grid">
                             <article class="infrastructure-card">
-                                <img src="../Images/Infrastructure/Saw-Buehler.jpg" alt="Optical microscope">
+                                <img src="../Images/Infrastructure/noztek-xcalibur.webp" alt="Noztek Xcalibur" loading="lazy" decoding="async">
                                 <div class="infrastructure-body">
-                                    <p class="infrastructure-category">Optical Characterization</p>
-                                    <h3>Optical Microscope</h3>
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>Noztek Xcalibur</h3>
                                     <details class="infrastructure-details">
-                                        <summary>
-                                            <span class="summary-closed">Description</span>
-                                            <span class="summary-open">Fermer</span>
-                                        </summary>
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
                                         <div class="infrastructure-description">
-                                            <p>Used to print functional inks, soft materials, and architected structures with controlled deposition paths. The system supports controlled deposition strategies for experimental manufacturing and material development.</p>
+                                            <p>Extrudeuse à trois zones de chauffe pour polymères et mélanges chargés de poudres métalliques, jusqu’à 600 °C.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/buehler-metaserv-2000.webp" alt="Buehler METASERV 2000" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>Buehler METASERV 2000</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Polisseuse manuelle pour la préparation d’échantillons, à une vitesse de rotation de 50 à 500 tr/min.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/lbc15.webp" alt="LBC15" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>LBC15</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Mélangeur de laboratoire doté d’une cuve étanche de 4 L en acier inoxydable et de trois vitesses allant jusqu’à 20 800 tr/min.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/3devo-filament-maker-two.png" alt="3devo Filament Maker TWO" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>3devo Filament Maker TWO</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Extrude des filaments sur mesure à partir de granulés et de plastique recyclé. Quatre zones de chauffe, contrôle optique du diamètre et bobinage automatique.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/3devo-filament-maker.png" alt="3devo Filament Maker" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>3devo Filament Maker</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Extrudeuse de paillasse pour transformer des granulés ou des paillettes recyclées en filament de diamètre contrôlé.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/3devo-gp20-shredder.png" alt="3devo GP20 Shredder" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>3devo GP20 Shredder</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Broyeur à deux étages destiné à produire des granules réutilisables de polymères et de composites de moins de 4 mm.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/exakt-80e.png" alt="EXAKT 80E" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>EXAKT 80E</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Broyeur à trois cylindres pour disperser des particules dans les polymères. Écartement réglable de 5 à 150 µm.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/spex-8000m.png" alt="SPEX 8000M" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>SPEX 8000M</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Broyeur à billes pour réduire des échantillons fragiles en poudre et mélanger des lots de 0,2 à 10 g.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/dsm-xplore.jpg" alt="DSM Xplore 5 mL" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>DSM Xplore 5 mL</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Microextrudeuse bivis pour la formulation de thermoplastiques. Traite des lots de 5 cm³ jusqu’à 450 °C.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/flacktek-speedmixer.png" alt="FlackTek DAC 330-100 SE SpeedMixer" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>FlackTek DAC 330-100 SE SpeedMixer</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Mélangeur centrifuge sans pales pour disperser et dégazer les formulations. Jusqu’à 100 g et 3 500 tr/min.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/buehler-isomet.jpg" alt="Buehler IsoMet" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>Buehler IsoMet</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Scie de précision à basse vitesse pour sectionner les échantillons fragiles en limitant leur déformation.</p>
                                         </div>
                                     </details>
                                 </div>
                             </article>
                         </div>
-                    </div>
-
-                    <div class="infrastructure-section" data-infrastructure-section="material-processing">
-                        <h2>Material processing</h2>
+                    </section>
+                    <section class="infrastructure-section" data-infrastructure-section="optical-characterization">
+                        <h2>Caractérisation optique</h2>
                         <div class="infrastructure-grid">
                             <article class="infrastructure-card">
-                                <img src="../Images/Infrastructure/3devo Filament Maker TWO.png" alt="Direct ink writing system">
+                                <img src="../Images/Infrastructure/olympus-szx-12.png" alt="Olympus SZX-12" loading="lazy" decoding="async">
                                 <div class="infrastructure-body">
-                                    <p class="infrastructure-category">Material Processing</p>
-                                    <h3>Direct Ink Writing System</h3>
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>Olympus SZX-12</h3>
                                     <details class="infrastructure-details">
-                                        <summary>
-                                            <span class="summary-closed">Description</span>
-                                            <span class="summary-open">Fermer</span>
-                                        </summary>
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
                                         <div class="infrastructure-description">
-                                            <p>Used to print functional inks, soft materials, and architected structures with controlled deposition paths. The system supports controlled deposition strategies for experimental manufacturing and material development.</p>
+                                            <p>Stéréomicroscope muni d’une caméra couleur Evolution VF. Imagerie classique et par fluorescence, avec grossissement jusqu’à 230×.</p>
                                         </div>
                                     </details>
                                 </div>
                             </article>
-
                             <article class="infrastructure-card">
-                                <img src="../Images/Infrastructure/extrusora.jpg" alt="3D printer">
+                                <img src="../Images/Infrastructure/olympus-bx-61.png" alt="Olympus BX-61" loading="lazy" decoding="async">
                                 <div class="infrastructure-body">
-                                    <p class="infrastructure-category">Material Processing</p>
-                                    <h3>3D Printer</h3>
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>Olympus BX-61</h3>
                                     <details class="infrastructure-details">
-                                        <summary>
-                                            <span class="summary-closed">Description</span>
-                                            <span class="summary-open">Fermer</span>
-                                        </summary>
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
                                         <div class="infrastructure-description">
-                                            <p>Used to print functional inks, soft materials, and architected structures with controlled deposition paths. The system supports controlled deposition strategies for experimental manufacturing and material development.</p>
+                                            <p>Microscope optique avec caméra monochrome Retiga 2000r, déplacement vertical motorisé et grossissement de 1,25× à 100×.</p>
                                         </div>
                                     </details>
                                 </div>
                             </article>
                         </div>
-                    </div>
-
-                    
+                    </section>
+                    <section class="infrastructure-section" data-infrastructure-section="mechanical-testing">
+                        <h2>Essais mécaniques</h2>
+                        <div class="infrastructure-grid">
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/impact-test-station.jpg" alt="Banc d’essais d’impact" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>Banc d’essais d’impact</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Tour de chute conçue au laboratoire, avec percuteurs interchangeables, pour évaluer l’absorption d’énergie et la résistance aux chocs jusqu’à 10 J.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/sinocera-ye2730.avif" alt="SINOCERA YE2730" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>SINOCERA YE2730</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Instrument de mesure du coefficient piézoélectrique d₃₃ des céramiques, polymères et monocristaux, de 10 à 2 000 pC/N.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/dma-3200.jpg" alt="DMA 3200" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire des structures intelligentes</p>
+                                    <h3>DMA 3200</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Analyseur mécanique dynamique pour caractériser les matériaux en traction, compression et flexion avec variation de température.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                    <section class="infrastructure-section" data-infrastructure-section="supporting-equipment">
+                        <h2>Équipements auxiliaires</h2>
+                        <div class="infrastructure-grid">
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/ohaus-explorer-pro.jpg" alt="Balance OHAUS Explorer Pro" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>OHAUS EP6101 / A&amp;D GH-200</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Balances pour la pesée d’échantillons. La capacité du modèle OHAUS est de 6 100 g. Le modèle A&amp;D couvre de 10 mg à 220 g.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/scanvac-scan-speed-32.png" alt="SCANVAC Scan Speed 32" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>SCANVAC Scan Speed 32</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Centrifugeuse pour mélanger et désaérer des solutions en lots jusqu’à 300 mL.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/cole-parmer-ultrasonic-bath.png" alt="Cole-Parmer EW-08891-11" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>Cole-Parmer EW-08891-11</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Bain à ultrasons chauffant de 42 kHz et de 280 mL pour la dispersion de particules.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/thermo-scientific-super-nuova.jpg" alt="Thermo Scientific Super-Nuova" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>Thermo Scientific Super-Nuova</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Plaque chauffante à agitation numérique dont la plage de température va de 60 à 500 °C.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/labconco-xpert-weigh-box.jpeg" alt="Labconco Xpert Weigh Box" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>Labconco Xpert Weigh Box</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Enceinte pour la pesée d’échantillons en environnement contrôlé.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/stabletemp-282a.jpeg" alt="StableTemp 282A (×2)" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire de microsystèmes et matériaux avancés</p>
+                                    <h3>StableTemp 282A (×2)</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Étuves sous vide pour sécher et réticuler les matériaux en conditions contrôlées jusqu’à 200 °C.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/tenma-72-2690.png" alt="Tenma 72-2690" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire des structures intelligentes</p>
+                                    <h3>Tenma 72-2690</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Alimentation stabilisée en courant continu, à courant ou tension constante, de 30 V et 5 A.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/chemical-fume-hood.jpg" alt="Hotte chimique" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire des structures intelligentes</p>
+                                    <h3>Hotte chimique</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Enceinte ventilée pour la manipulation de produits chimiques.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/gw-instek-afg-2105.jpeg" alt="GW Instek AFG-2105" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire des structures intelligentes</p>
+                                    <h3>GW Instek AFG-2105</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Générateur de fonctions sinusoïdales, carrées et triangulaires de 0,1 Hz à 5 MHz.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/nordson-ultimus-v.jpeg" alt="Nordson Ultimus V" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire des structures intelligentes</p>
+                                    <h3>Nordson Ultimus V</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Doseur de précision à minuterie numérique pour des dépôts reproductibles de liquides et de pâtes.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                            <article class="infrastructure-card">
+                                <img src="../Images/Infrastructure/power-designs-2k-10.jpeg" alt="Power Designs 2K-10" loading="lazy" decoding="async">
+                                <div class="infrastructure-body">
+                                    <p class="infrastructure-category">Laboratoire des structures intelligentes</p>
+                                    <h3>Power Designs 2K-10</h3>
+                                    <details class="infrastructure-details">
+                                        <summary><span class="summary-closed">Description</span><span class="summary-open">Fermer</span></summary>
+                                        <div class="infrastructure-description">
+                                            <p>Alimentation haute tension stabilisée en courant continu, jusqu’à 2 000 V.</p>
+                                        </div>
+                                    </details>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
                 </div>
             </section>
         </main>

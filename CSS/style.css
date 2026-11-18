@@ -735,6 +735,15 @@ p {
     transform: translateY(0);
 }
 
+.theme-copy p + p,
+.impact-list {
+    margin-top: 1rem;
+}
+
+.theme-copy p + h2 {
+    margin-top: 1.5rem;
+}
+
 .theme-gallery {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
@@ -753,9 +762,17 @@ p {
     height: 518px;
 }
 
+.theme-gallery img:only-child {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    height: auto;
+    max-height: 518px;
+    object-fit: contain;
+}
+
 .project-slider {
     display: grid;
-    grid-auto-columns: minmax(300px, 420px);
+    grid-auto-columns: minmax(0, min(100%, 420px));
     grid-auto-flow: column;
     gap: 18px;
     overflow-x: auto;
@@ -771,6 +788,17 @@ p {
     height: 270px;
 }
 
+.project-tile.project-placeholder {
+    min-height: 270px;
+    background: #000;
+}
+
+.project-placeholder .project-tile-content p {
+    max-height: none;
+    opacity: 1;
+    transform: none;
+}
+
 .member-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, var(--member-card-width));
@@ -783,7 +811,7 @@ p {
     display: flex;
     flex-direction: column;
     width: var(--member-card-width);
-    height: var(--member-card-height);
+    min-height: var(--member-card-height);
     overflow: hidden;
     border: 0;
     border-radius: 14px;
@@ -1246,7 +1274,7 @@ p {
 .infrastructure-card {
     position: relative;
     width: var(--infrastructure-card-width);
-    height: var(--infrastructure-card-height);
+    min-height: var(--infrastructure-card-height);
     overflow: hidden;
     border-radius: 14px;
     background: #f8f8f8;
@@ -1256,7 +1284,18 @@ p {
 .infrastructure-card img {
     width: 100%;
     aspect-ratio: 1 / 1;
-    object-fit: cover;
+    object-fit: contain;
+    background: #fff;
+}
+
+.infrastructure-card:not(:has(img)) {
+    height: auto;
+    min-height: 168px;
+}
+
+.infrastructure-card:not(:has(img)) .infrastructure-details[open] {
+    position: static;
+    padding: 0;
 }
 
 .infrastructure-body {

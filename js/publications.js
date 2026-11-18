@@ -1,4 +1,5 @@
 let allPublications = [];
+const publicationsInFrench = document.documentElement.lang === "fr";
 
 function escapeHtml(value) {
     return String(value || "")
@@ -17,7 +18,7 @@ function populateYearFilter(publications) {
         .sort((a, b) => Number(b) - Number(a));
 
     yearSelect.innerHTML = `
-        <option value="">All years</option>
+        <option value="">${publicationsInFrench ? "Toutes les années" : "All years"}</option>
         ${years.map((year) => `<option value="${escapeHtml(year)}">${escapeHtml(year)}</option>`).join("")}
     `;
 }
@@ -40,7 +41,7 @@ function renderPublications(publications) {
     if (!list) return;
 
     if (publications.length === 0) {
-        list.innerHTML = `<p>No publications found.</p>`;
+        list.textContent = publicationsInFrench ? "Aucune publication trouvée." : "No publications found.";
         return;
     }
 
@@ -91,7 +92,7 @@ function setupJsonPublicationFilters() {
 
             const matchesText = !textQuery || searchableText.includes(textQuery);
             const matchesAuthor = !authorQuery || authors.includes(authorQuery);
-            const matchesYear = !year || pub.year === year;
+            const matchesYear = !year || String(pub.year) === year;
 
             return matchesText && matchesAuthor && matchesYear;
         });
@@ -108,8 +109,7 @@ async function loadPublications() {
     const list = document.querySelector("[data-publication-list]");
     if (!list) return;
 
-    const isFrench = window.location.pathname.includes("/fr/");
-    const dataPath = isFrench ? "../Publication_Data/publications.json" : "Publication_Data/publications.json";
+    const dataPath = publicationsInFrench ? "../Publication_Data/publications.json" : "Publication_Data/publications.json";
 
     try {
         const response = await fetch(dataPath);
@@ -120,7 +120,9 @@ async function loadPublications() {
         renderPublications(allPublications);
         setupJsonPublicationFilters();
     } catch (error) {
-        list.innerHTML = `<p>Publications could not be loaded.</p>`;
+        list.textContent = publicationsInFrench
+            ? "Impossible de charger les publications."
+            : "Publications could not be loaded.";
         console.error(error);
     }
 }
